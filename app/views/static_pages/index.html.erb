@@ -35,6 +35,7 @@
             </ul>
           </li>
         </ul>
+
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {class: 'navbar-form pull-right'})  do |f|  %>
           <% if devise_mapping.rememberable? -%>
             <%= f.check_box :remember_me %>
@@ -44,13 +45,14 @@
 
           <%= f.password_field :password, placeholder: 'Senha' %>
 
-          <%= f.submit "Sign in", class: 'btn btn-success' %>
+          <%= f.submit "Entrar", class: 'btn btn-success' %>
         <% end %>
 
       </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>
+
 
 <div class="container">
   <h1 class="title">Minerva</h1>

@@ -1,7 +1,9 @@
 Minerva::Application.routes.draw do
-  get "static_pages/index"
+  
+  devise_for :users
 
-  get "static_pages/admin"
+  root to: 'static_pages#index'
+  match '/admin' => 'static_pages#admin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

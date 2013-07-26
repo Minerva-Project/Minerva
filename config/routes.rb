@@ -2,7 +2,10 @@ Minerva::Application.routes.draw do
   
   devise_for :users
 
-  root to: 'static_pages#index'
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
+
   match '/admin' => 'static_pages#admin'
 
   # The priority is based upon order of creation:

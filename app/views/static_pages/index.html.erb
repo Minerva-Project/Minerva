@@ -16,7 +16,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="#">Project name</a>
+      <a class="brand" href="#">Minerva</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>
@@ -35,11 +35,18 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form pull-right">
-          <input class="span2" type="text" placeholder="Email">
-          <input class="span2" type="password" placeholder="Password">
-          <button type="submit" class="btn">Sign in</button>
-        </form>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {class: 'navbar-form pull-right'})  do |f|  %>
+          <% if devise_mapping.rememberable? -%>
+            <%= f.check_box :remember_me %>
+          <% end -%>   
+
+          <%= f.email_field :email, :autofocus => true, placeholder: 'Email' %>
+
+          <%= f.password_field :password, placeholder: 'Senha' %>
+
+          <%= f.submit "Sign in", class: 'btn btn-success' %>
+        <% end %>
+
       </div><!--/.nav-collapse -->
     </div>
   </div>

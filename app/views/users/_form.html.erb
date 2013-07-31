@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Novo Usuário</h2>
+
+  <%= form_for @user do |f| %>
+
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true %></div>
+
+    <div><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
+
+    <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.submit "Sign up" %></div>
+  <% end %>
+
+</div>

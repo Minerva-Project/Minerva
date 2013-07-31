@@ -1,5 +1,8 @@
 Minerva::Application.routes.draw do
   
+  resources :courses
+
+
   devise_for :users
 
   devise_scope :user do

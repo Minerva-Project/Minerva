@@ -1,0 +1,25 @@
+<%= form_for(@course) do |f| %>
+
+    <p><b>Título</b></p>
+    <%= f.text_field :title, class: 'span8' %><br />
+  
+  
+    <p><b>Instrutor</b></p>
+    <%= f.text_field :instructor %>
+  
+  
+    <p><b>Data de Lançamento</b></p>
+    <%= f.date_select :release_date %>
+  
+  
+    <p><b>Data do Término</b></p>
+    <%= f.date_select :end_date %>
+  
+    
+    <p><b>Descrição</b></p>
+    <%= f.text_area :description, :size => "40x5", class: 'span10'  %><br />
+  
+  
+    <%= f.submit class: 'btn btn-success', value: 'Criar Curso' %>
+  
+<% end %>

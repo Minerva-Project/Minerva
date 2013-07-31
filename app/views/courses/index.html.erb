@@ -1,31 +1,59 @@
-<h1>Listing courses</h1>
+<%= render 'layouts/header' %>
 
-<table>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2 sidebar-nav">
+      <%= render 'layouts/menu' %>
+    </div>
+
+    <div class="span8">
+      <p class="lead">Lista de Cursos</p>
+      <hr>
+      
+<table class="table">
   <tr>
-    <th>Title</th>
-    <th>Instructor</th>
-    <th>Release date</th>
-    <th>End date</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Titulo</th>
+    <th>Instrutor</th>
+    <th>Lançamento</th>
+    <th>Término</th>
+    <th>Editar</th>
+    <th>Excluir</th>
   </tr>
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%= course.title %></td>
+    <td><b><%= link_to course.title, course %></b></td>
     <td><%= course.instructor %></td>
-    <td><%= course.release_date %></td>
-    <td><%= course.end_date %></td>
-    <td><%= course.description %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= course.release_date.strftime("%m/%d/%Y") %></td>
+    <td><%= course.end_date.strftime("%m/%d/%Y") %></td>
+    <td><%= link_to 'Editar', edit_course_path(course), class: 'btn btn-small btn-success' %></td>
+    <td><%= link_to 'Excluir', course, method: :delete, data: { confirm: 'Deseja excluir?' }, class: 'btn btn-small btn-danger' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+    </div>
 
-<%= link_to 'New Course', new_course_path %>
+    <div class="span2 sidebar-nav">
+    <table>
+      <tr>
+        <td>
+          <p class="lead">Info</p>
+        <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <small>
+            Aqui você tem a possibilidade de visualizar todos os posts criados por você. Juntamente com informações
+            adicionais como a <b>data</b> em que foi criada e a <b>categoria</b> que foi anexada. Além disso, é possível
+            <b>editar</b> algum post que você deseja fazer alterações. Caso não deseje mais algum post, você pode <b>deletá-lo</b>
+            clicando em <b>excluir</b>
+          </small>
+        </td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>

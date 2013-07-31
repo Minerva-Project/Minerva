@@ -11,7 +11,8 @@
   <ul id="cat">
     <li><b><i class="icon-home"></i> <%= link_to 'Home', admin_path %></b></li>
     <%# if can? :update, @post %>
-    <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', new_course_path %></b></li>
+    <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', courses_path %></b></li>
+    <li><b><i class="icon-refresh"></i> <%= link_to 'Criar Curso', new_course_path %></b></li>
     <li><b><i class="icon-share"></i> <%#= link_to 'Fornecedores', suppliers_path %></b></li>
     <%# end %>
     <li><b><i class="icon-list-alt"></i> <%#= link_to 'Quadro de Aviso', notices_path %></b></li>

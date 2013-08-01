@@ -1,25 +1,24 @@
-<%= form_for(@course) do |f| %>
-
-    <p><b>Título</b></p>
-    <%= f.text_field :title, class: 'span8' %><br />
-  
-  
-    <p><b>Instrutor</b></p>
-    <%= f.text_field :instructor %>
-  
-  
-    <p><b>Data de Lançamento</b></p>
-    <%= f.date_select :release_date %>
-  
-  
-    <p><b>Data do Término</b></p>
-    <%= f.date_select :end_date %>
-  
-    
-    <p><b>Descrição</b></p>
-    <%= f.text_area :description, :size => "40x5", class: 'span10'  %><br />
-  
-  
-    <%= f.submit class: 'btn btn-success', value: 'Criar Curso' %>
-  
-<% end %>
+<table class="table">
+  <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
+  <%= form_for(@course) do |f| %>
+  <tr>
+    <td><p><b>Título</b></p><%= f.text_field :title, placeholder: 'Nome', class: 'span6' %></td>
+  </tr>
+  <tr>
+    <td><p><b>Instrutor</b></p> <%= f.text_field :instructor, placeholder: 'Email', class: 'span6' %></td>
+  </tr>
+  <tr>
+    <td><p><b>Site</b> (<i>Website, twitter, facebook ... </i>)</i></p> <%= f.date_select :release_date, placeholder: 'Site', class: 'span12' %></td>
+  </tr>
+  <tr>
+    <td><p><b>Site</b> (<i>Website, twitter, facebook ... </i>)</i></p> <%= f.date_select :end_date, placeholder: 'Site', class: 'span12' %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <p><b>Observação</b> (<i>Observação opcionais</i>)</p> <%= f.text_area :description, placeholder: 'Observação', class: 'span12', rows: '6' %>
+      <%= f.submit "Enviar", class: "btn btn-small btn-primary btn btn-success span3" %>
+      <%= link_to 'Voltar', users_path, class: "btn btn-small btn-info btn btn-success span3 pull-right" %>
+    </td>
+  </tr>
+  <% end %>
+</table>

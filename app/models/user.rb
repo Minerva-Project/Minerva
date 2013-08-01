@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :telephone, :sex, :web_site, :status,
+                  :street_address, :city, :state, :country, :observation, :first_name, :last_name
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

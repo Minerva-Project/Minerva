@@ -1,18 +1,26 @@
-<div class="container">
-  <h2>Novo Usuário</h2>
 
-  <%= form_for @user do |f| %>
 
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email, :autofocus => true %></div>
 
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
-
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
-
-    <div><%= f.submit "Sign up" %></div>
+<table class="table">
+  <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
+  <%= form_for(@user) do |f| %>
+  <tr>
+    <td colspan="2"><p><b>Título</b></p><%= f.text_field :email, placeholder: 'Título', class: 'span12' %></td>
+  </tr>
+  <tr>
+    <td><p><b>Anunciante</b></p> <%= f.text_field :email, placeholder: 'Anunciante', class: 'span12' %></td>
+    <td><p><b>Preço</b></p> <%= f.text_field :email, placeholder: 'Preço', class: 'span12' %></td>
+  </tr>
+  <tr>
+    <td><p><b>Telefone</b> (<i>Telefone para contato</i>)</p> <%= f.text_field :email, placeholder: 'Telefone', class: 'span12' %></td>
+    <td><p><b>Email</b></p> <%= f.text_field :email, placeholder: 'Email', class: 'span12' %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <p><b>Observação</b> (<i>Uma breve descrição</i>)</p> <%= f.text_area :email, placeholder: 'Observação', class: 'span12', rows: '6' %>
+      <%= f.submit "Enviar", class: "btn btn-small btn-primary btn btn-success span3" %>
+      <%= link_to 'Voltar', users_path, class: "btn btn-small btn-info btn btn-success span3 pull-right" %>
+    </td>
+  </tr>
   <% end %>
-
-</div>
+</table>

@@ -25,6 +25,9 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     @course = Course.new
+    @users = User.all
+
+    @user = @users.each { |u| }
 
     respond_to do |format|
       format.html # new.html.erb

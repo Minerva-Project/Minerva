@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-condensed">
   <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
   <%= form_for(@user) do |f| %>
   <tr>
@@ -10,8 +10,15 @@
     <td><p><b>Telefone</b> <i class="muted">(ex: 00 0000 0000)</i></p> <%= f.text_field :telephone, placeholder: 'Telefone', class: 'span12' %></td>
   </tr>
   <tr>
-    <td><p><b>Sexo</b> (<i>ex: Masculino/Feminino </i>)</p> <%= f.text_field :sex, placeholder: 'Sexo', class: 'span12' %></td>
+    <td colspan="2"><p>
+    <label class="radio">
+      <%= f.radio_button(:status, 'male') %><b>Masculino</b> <br>
+      <%= f.radio_button(:status, 'female') %><b>Feminino</b><br>
+    </label>
+    </td>
+  <tr>
     <td><p><b>Site</b> (<i>Website, twitter, facebook ... </i>)</i></p> <%= f.text_field :web_site, placeholder: 'Site', class: 'span12' %></td>
+  </tr>
   </tr>
     <tr>
     <td><p><b>Senha</b></p> <%= f.text_field :password, placeholder: 'Senha', class: 'span12' %></td>

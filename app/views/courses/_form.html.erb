@@ -1,17 +1,17 @@
-<table class="table">
+<table class="table table-condensed">
   <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
   <%= form_for(@course) do |f| %>
   <tr>
     <td><p><b>Título</b></p><%= f.text_field :title, placeholder: 'Nome', class: 'span6' %></td>
   </tr>
   <tr>
-    <td><p><b>Instrutor</b></p> <%= f.text_field :instructor, placeholder: 'Email', class: 'span6' %></td>
+    <td><p><b>Instrutor</b></p> <%= f.select :instructor, @users.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}"; end; }  %></td>
   </tr>
   <tr>
-    <td><p><b>Site</b> (<i>Website, twitter, facebook ... </i>)</i></p> <%= f.date_select :release_date, placeholder: 'Site', class: 'span12' %></td>
+    <td><p><b>Início</b></p> <%= f.date_select :release_date, placeholder: 'Site', class: 'span6' %></td>
   </tr>
   <tr>
-    <td><p><b>Site</b> (<i>Website, twitter, facebook ... </i>)</i></p> <%= f.date_select :end_date, placeholder: 'Site', class: 'span12' %></td>
+    <td><p><b>Término</b></p> <%= f.date_select :end_date, placeholder: 'Site', class: 'span6' %></td>
   </tr>
   <tr>
     <td colspan="2">

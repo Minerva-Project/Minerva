@@ -1,13 +1,13 @@
 <table class="table">
   <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
-  <%= form_for @user do |f| %>
+  <%= form_for(@user) do |f| %>
   <tr>
     <td><p><b>Nome</b></p><%= f.text_field :first_name, placeholder: 'Nome', class: 'span12' %></td>
     <td><p><b>Sobrenome</b></p> <%= f.text_field :last_name, placeholder: 'Sobrenome', class: 'span12' %></td>
   </tr>
   <tr>
     <td><p><b>Email</b></p> <%= f.text_field :email, placeholder: 'Email', class: 'span12' %></td>
-    <td><p><b>Telefone</b></p> <%= f.text_field :telephone, placeholder: 'Telefone', class: 'span12' %></td>
+    <td><p><b>Telefone</b> <i class="muted">(ex: 00 0000 0000)</i></p> <%= f.text_field :telephone, placeholder: 'Telefone', class: 'span12' %></td>
   </tr>
   <tr>
     <td><p><b>Sexo</b> (<i>ex: Masculino/Feminino </i>)</p> <%= f.text_field :sex, placeholder: 'Sexo', class: 'span12' %></td>
@@ -43,3 +43,4 @@
   </tr>
   <% end %>
 </table>
+<br><br>

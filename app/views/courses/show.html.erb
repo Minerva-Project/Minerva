@@ -7,48 +7,47 @@
     </div>
 
     <div class="span8">
-      <p class="lead">Criar novo curso</p>
-      <hr>
+      <table class="table">
+        <tr class="info">
+          <td><b><i class="icon-th-list"></i Posts</b> Curso </td>
+        </tr>
+      </table>
+<hr>
+      <p>
+        <b>Titulo:</b>
+        <%= @course.title %>
+      </p>
 
-<p id="notice"><%= notice %></p>
+      <p>
+        <b>Instrutor:</b>
+        <%= @course.instructor %>
+      </p>
 
-<p>
-  <b>Titulo:</b>
-  <%= @course.title %>
-</p>
+      <p>
+        <b>Lançamento:</b>
+        <%= @course.release_date %>
+      </p>
 
-<p>
-  <b>Instrutor:</b>
-  <%= @course.instructor %>
-</p>
+      <p>
+        <b>End date:</b>
+        <%= @course.end_date %>
+      </p>
 
-<p>
-  <b>Lançamento:</b>
-  <%= @course.release_date %>
-</p>
+      <p>
+        <b>Description:</b>
+        <%= @course.description %>
+      </p>
+<hr>
 
-<p>
-  <b>End date:</b>
-  <%= @course.end_date %>
-</p>
+<%= link_to 'Editar', edit_course_path(@course), class: 'btn btn-small btn-success' %>
+<%= link_to 'Voltar', courses_path, class: 'btn btn-small btn-info' %>
 
-<p>
-  <b>Description:</b>
-  <%= @course.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
     </div>
 
     <div class="span2 sidebar-nav">
-    <table>
-      <tr>
-        <td>
-          <p class="lead">Info</p>
-        <hr>
-        </td>
+    <table class="table">
+      <tr class="error">
+        <td><b><i class=" icon-info-sign"></i> info</b></td>
       </tr>
       <tr>
         <td>
@@ -64,5 +63,3 @@
     </div>
   </div>
 </div>
-
-

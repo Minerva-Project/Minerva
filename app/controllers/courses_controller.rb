@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
-  # GET /courses
-  # GET /courses.json
+  before_filter :map
+
   def index
     @courses = Course.all
 
@@ -10,8 +10,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/1
-  # GET /courses/1.json
+
   def show
     @course = Course.find(params[:id])
 
@@ -21,17 +20,14 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/new
-  # GET /courses/new.json
+
   def new
     @course = Course.new
-    @users = User.all
+  end
 
-    @user = @users.each { |u| }
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @course }
+  def filter(value)
+    value.each do |v|
+      v unless v != nil
     end
   end
 
@@ -82,5 +78,9 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url }
       format.json { head :no_content }
     end
+  end
+
+  def map
+    @name = User.all.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}" ; end; }.compact
   end
 end

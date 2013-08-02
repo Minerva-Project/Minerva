@@ -2,20 +2,20 @@
   <%= content_tag(:div, flash[:notice], :class => "alert alert-error") if flash[:notice] %>
   <%= form_for(@course) do |f| %>
   <tr>
-    <td><p><b>Título</b></p><%= f.text_field :title, placeholder: 'Nome', class: 'span6' %></td>
+    <td><p><b>Título</b></p><%= f.text_field :title, placeholder: 'Título', class: 'span6' %></td>
   </tr>
   <tr>
-    <td><p><b>Instrutor</b></p> <%= f.select :instructor, @users.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}"; end; }  %></td>
+    <td><p><b>Instrutor</b></p> <%= f.select :instructor, options_for_select(@name) %></td>
   </tr>
   <tr>
-    <td><p><b>Início</b></p> <%= f.date_select :release_date, placeholder: 'Site', class: 'span6' %></td>
+    <td><p><b>Início</b></p> <%= f.date_select :release_date %></td>
   </tr>
   <tr>
-    <td><p><b>Término</b></p> <%= f.date_select :end_date, placeholder: 'Site', class: 'span6' %></td>
+    <td><p><b>Término</b></p> <%= f.date_select :end_date %></td>
   </tr>
   <tr>
     <td colspan="2">
-      <p><b>Observação</b> (<i>Observação opcionais</i>)</p> <%= f.text_area :description, placeholder: 'Observação', class: 'span12', rows: '6' %>
+      <p><b>Observação</b> (<i>Observações opcionais</i>)</p> <%= f.text_area :description, placeholder: 'Observação', class: 'span12', rows: '6' %>
       <%= f.submit "Enviar", class: "btn btn-small btn-primary btn btn-success span3" %>
       <%= link_to 'Voltar', users_path, class: "btn btn-small btn-info btn btn-success span3 pull-right" %>
     </td>

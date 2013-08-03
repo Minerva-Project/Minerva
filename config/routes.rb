@@ -1,12 +1,12 @@
 Minerva::Application.routes.draw do
-  
-  resources :profiles
 
 
   resources :courses
 
   devise_for :users
-  resources :users, :controller => "users"
+  resources :users, :controller => "users" do
+    resources :profiles
+  end
 
   devise_scope :user do
     root to: 'devise/sessions#new'

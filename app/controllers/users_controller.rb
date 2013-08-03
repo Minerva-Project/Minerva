@@ -7,6 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if Profile.find_by_id(params[:id])
+      @profile = Profile.find(params[:id])
+    else
+      @profile == nil
+    end
   end
 
   def new

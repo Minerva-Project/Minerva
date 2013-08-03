@@ -12,6 +12,15 @@
           <td><b><i class="icon-th-list"></i Posts</b> Cursos</td>
         </tr>
 
+
+        <% if @profile != nil %>
+          <%= link_to 'Editar Profile', edit_user_profile_path(@user) %> <br>
+          <%= link_to 'Mostar Profile', user_profile_path(@user) %> <br>
+          <% else %>
+          <%= link_to 'Criar Profile', new_user_profile_path(@user) %> <br>
+        <% end %>
+
+
 <table class="table table-striped">
   <tr>
     <td class="span6"><b>Nome:</b> <%= @user.first_name %></td>
@@ -50,6 +59,7 @@
     <td class="span6"><b>Status:</b> <%= @user.observation %></td>
   </tr>
 </table>
+
 
 <br />
     </div>

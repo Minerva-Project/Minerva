@@ -6,57 +6,49 @@
       <%= render 'layouts/menu' %>
     </div>
 
-    <div class="span8">
+    <div class="span7">
       <table class="table">
         <tr class="info">
-          <td><b><i class="icon-th-list"></i Posts</b> Curso </td>
+          <td><b><i class="icon-th-list"></i Posts</b> <%= @course.title %> </td>
         </tr>
       </table>
-<hr>
+      <hr>
       <p>
         <b>Titulo:</b>
         <%= @course.title %>
       </p>
-
       <p>
         <b>Instrutor:</b>
         <%= @course.instructor %>
       </p>
-
       <p>
         <b>Lançamento:</b>
         <%= @course.release_date %>
       </p>
-
       <p>
         <b>End date:</b>
         <%= @course.end_date %>
       </p>
-
       <p>
         <b>Description:</b>
         <%= @course.description %>
       </p>
-<hr>
+      <hr>
 
 <%= link_to 'Editar', edit_course_path(@course), class: 'btn btn-small btn-success' %>
 <%= link_to 'Voltar', courses_path, class: 'btn btn-small btn-info' %>
 
     </div>
 
-    <div class="span2 sidebar-nav">
+    <div class="span3 sidebar-nav">
     <table class="table">
-      <tr class="error">
-        <td><b><i class=" icon-info-sign"></i> info</b></td>
+      <tr class="warning">
+        <td><b>Configurações</b></td>
       </tr>
       <tr>
         <td>
-          <small>
-            Aqui você tem a possibilidade de visualizar todos os posts criados por você. Juntamente com informações
-            adicionais como a <b>data</b> em que foi criada e a <b>categoria</b> que foi anexada. Além disso, é possível
-            <b>editar</b> algum post que você deseja fazer alterações. Caso não deseje mais algum post, você pode <b>deletá-lo</b>
-            clicando em <b>excluir</b>
-          </small>
+          <%= link_to 'Conteúdo' %><br>
+          <%= link_to 'Adicionar Aluno', users_path %><br>
         </td>
       </tr>
     </table>

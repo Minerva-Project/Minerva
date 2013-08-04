@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  before_filter :map
 
   def index
     @courses = Course.all
@@ -23,12 +22,6 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
-  end
-
-  def filter(value)
-    value.each do |v|
-      v unless v != nil
-    end
   end
 
   # GET /courses/1/edit

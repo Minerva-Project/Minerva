@@ -9,10 +9,15 @@
     <div class="span8">
       <table class="table">
         <tr class="info">
-          <td><b><i class="icon-th-list"></i Posts</b> Cursos</td>
+          <td><b><i class="icon-th-list"></i> Posts </b>Cursos</td>
         </tr>
       </table>
 
+      <% @user.courses.each do |c| %>
+
+        <%= c.title  %><br>
+
+      <% end  %>
 
         <% if @profile != nil %>
           <%= link_to 'Editar Profile', edit_user_profile_path(@user), class: 'btn btn-small btn-info' %>
@@ -23,7 +28,7 @@
 
         <table class="table table-striped">
           <tr>
-            <td class="span6"><b>Nome:</b> <%= @user.first_name %></td>
+            <td class="span6"><b>Nome:</b><%= @user.first_name %></td>
           </tr>
           <tr>
             <td class="span6"><b>Sobrenome:</b> <%= @user.last_name %></td>
@@ -66,7 +71,7 @@
     <div class="span2 sidebar-nav">
     <table class="table">
       <tr class="error">
-        <td><b><i class=" icon-info-sign"></i> info</b></td>
+        <td><b><i class=" icon-info-sign"></i> info </b></td>
       </tr>
       <tr>
         <td>

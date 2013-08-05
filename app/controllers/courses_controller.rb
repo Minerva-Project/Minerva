@@ -74,10 +74,33 @@ class CoursesController < ApplicationController
     #@users = User.all
   end
 
+
   def add
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
     course.users << user
-    redirect_to course
+    redirect_to course, notice: "Criado"
+  end
+
+  def remove
+    user = User.find(params[:user_id])
+    course = Course.find(params[:id])
+
+    if  course.users.destroy useR
+      redirect_to course, notice: "Removido"   
+    end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

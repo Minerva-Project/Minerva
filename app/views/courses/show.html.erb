@@ -9,13 +9,15 @@
     <div class="span7">
       <table class="table">
         <tr class="info">
-          <td><b><i class="icon-th-list"></i Posts</b> <%= @course.title %> </td>
+          <td><b><i class="icon-th-list"></i> Posts</b> <%= @course.title %> </td>
         </tr>
       </table>
       <hr>
+      <%= notice %><br>
 
-      <% @course.users.each do |u| %>
-        <%= u.email %><br>
+      <% @course.users.each do |user| %>
+        <%= user.email %><br>
+        <%= link_to 'remove', remove_path(user), method: :delete %><br>
       <% end %>
 
       <br><br>

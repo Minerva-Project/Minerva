@@ -75,8 +75,9 @@ class CoursesController < ApplicationController
   end
 
   def add
-    @user = User.find(params[:id])
-    @course = Course.find(params[:id])
-    @all = @course.users
+    user = User.find(params[:user_id])
+    course = Course.find(params[:id])
+    course.users << user
+    redirect_to course
   end
 end

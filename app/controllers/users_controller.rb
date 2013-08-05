@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_filter :authenticate_user!, except: 'index'
+  before_filter :authenticate_user!, except: 'index'
 
   def index
     @users = User.all
@@ -49,4 +49,22 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def search
+    @users = User.all    
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

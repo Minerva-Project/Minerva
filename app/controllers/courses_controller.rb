@@ -24,13 +24,10 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
 
-  # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
   end
 
-  # POST /courses
-  # POST /courses.json
   def create
     @course = Course.new(params[:course])
 
@@ -45,8 +42,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # PUT /courses/1
-  # PUT /courses/1.json
   def update
     @course = Course.find(params[:id])
 
@@ -61,8 +56,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # DELETE /courses/1
-  # DELETE /courses/1.json
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
@@ -75,5 +68,15 @@ class CoursesController < ApplicationController
 
   def map
     @name = User.all.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}" ; end; }.compact
+  end
+
+  def search
+    #@users = User.all
+  end
+
+  def add
+    @user = User.find(params[:id])
+    @course = Course.find(params[:id])
+    @all = @course.users
   end
 end

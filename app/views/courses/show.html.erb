@@ -13,6 +13,13 @@
         </tr>
       </table>
       <hr>
+
+      <% @course.users.each do |u| %>
+        <%= u.email %><br>
+      <% end %>
+
+      <br><br>
+
       <p>
         <b>Titulo:</b>
         <%= @course.title %>
@@ -35,8 +42,8 @@
       </p>
       <hr>
 
-<%= link_to 'Editar', edit_course_path(@course), class: 'btn btn-small btn-success' %>
-<%= link_to 'Voltar', courses_path, class: 'btn btn-small btn-info' %>
+        <%= link_to 'Editar', edit_course_path(@course), class: 'btn btn-small btn-success' %>
+        <%= link_to 'Voltar', courses_path, class: 'btn btn-small btn-info' %>
 
     </div>
 
@@ -48,7 +55,7 @@
       <tr>
         <td>
           <%= link_to 'Conteúdo' %><br>
-          <%= link_to 'Adicionar Aluno', users_path %><br>
+          <%= link_to 'Adicionar Aluno', search_path %><br>
         </td>
       </tr>
     </table>

@@ -86,7 +86,7 @@ class CoursesController < ApplicationController
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
 
-    if  course.users.destroy useR
+    if  course.users.destroy user
       redirect_to course, notice: "Removido"   
     end
   end

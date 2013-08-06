@@ -9,6 +9,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def self.search(search)
+    if search 
+      where('first_name LIKE ?', "%#{search}")
+    else
+      scoped
+    end
+    
+  end
+
 
   has_one :profile
   has_and_belongs_to_many :courses

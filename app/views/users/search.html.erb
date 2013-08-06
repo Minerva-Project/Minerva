@@ -20,6 +20,12 @@
     <th>Adicionar</th>
   </tr>
 
+  <%= form_tag search_path, :method => 'get', :id => "users" do %>
+      <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :first_name => nil %>
+    </p>
+  <% end %>
 
 <% @users.each do |user| %>
   <tr>
@@ -31,6 +37,8 @@
 <% end %>
 </table>
 
+
+<%#= will_paginate @users  %>
 <br />
     </div>
 

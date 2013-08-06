@@ -9,6 +9,7 @@ gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'pry'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.

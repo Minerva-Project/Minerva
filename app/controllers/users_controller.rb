@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, except: 'index'
-  
- 
+
   def index
     @users = User.all
   end
 
   def show
-    
     @user = User.find(params[:id])
     if Profile.find_by_id(params[:id])
       @profile = Profile.find(params[:id])
@@ -60,7 +58,3 @@ class UsersController < ApplicationController
    end
   end
 end
-
-
-
-

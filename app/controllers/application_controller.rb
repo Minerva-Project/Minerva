@@ -2,7 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def after_sign_in_path_for(user)
-    return admin_path
+    case current_user.status
+    when "admin"
+      return admin_path
+    when "teacher"
+      return teacher_path
+    when "student"
+      return student_path
+    end
   end
 
   def status

@@ -9,7 +9,7 @@
 
 <div class="well"><br>
   <ul id="cat">
-    <% if status == "admin" %>
+    <% if status == "administrator" %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', admin_path %></b></li>
         <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', courses_path %></b></li>
         <li><b><i class="icon-refresh"></i> <%= link_to 'Criar Curso', new_course_path %></b></li>
@@ -33,6 +33,6 @@
         <li><b><i class="icon-bullhorn"></i> <%#= link_to 'Anúncio', ads_path %></b></li>
         <li class="divider"></li>
     <% end %>
-    <li><b><i class="icon-off"></i> <%= link_to 'Sair', destroy_user_session_path, method: :delete %></b></li>
+    <li><b><i class="icon-off"></i> <%= link_to 'Sair', logout_path, method: :delete %></b></li>
   </ul>
 </div>

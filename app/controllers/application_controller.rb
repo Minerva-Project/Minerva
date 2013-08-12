@@ -9,5 +9,11 @@ class ApplicationController < ActionController::Base
     current_user.status
   end
 
+  def only_for(role)
+    unless role == current_user.status
+      redirect_to root_path, notice: "Not authorized."
+    end
+  end
+
   helper_method :status, :session
 end

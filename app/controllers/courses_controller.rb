@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
+before_filter {|controller| controller.only_for('administrator') }
 before_filter :map
+
 
   def index
     @courses = Course.all
@@ -88,20 +90,7 @@ before_filter :map
     course = Course.find(params[:id])
 
     if  course.users.destroy user
-      redirect_to course, notice: "Removido"   
+      redirect_to course, notice: "Removido"
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

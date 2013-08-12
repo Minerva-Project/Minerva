@@ -2,7 +2,6 @@ class CoursesController < ApplicationController
 before_filter {|controller| controller.only_for('administrator') }
 before_filter :map
 
-
   def index
     @courses = Course.all
 

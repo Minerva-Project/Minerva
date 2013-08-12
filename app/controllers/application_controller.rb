@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
     return admin_path
   end
 
+  def status
+    current_user.status
+  end
+
+  helper_method :status, :session
 end

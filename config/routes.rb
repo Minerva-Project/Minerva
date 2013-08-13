@@ -17,6 +17,7 @@ Minerva::Application.routes.draw do
     get "logout", :to => "devise/sessions#destroy"
   end
 
+  match '/manage' => 'users#manage'
   match '/admin' => 'static_pages#admin'
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'

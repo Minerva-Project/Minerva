@@ -18,11 +18,11 @@
     <% end %>
     <% if status == "teacher" %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
-        <li><b><i class="icon-home"></i> <%= link_to 'Mensagens', notices_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Turmas', manage_path %></b></li>
     <% end %>
     <% if status == "student" %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', student_path %></b></li>
-        <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', student_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', notices_path %></b></li>
         <li><b><i class="icon-list-alt"></i> <%#= link_to 'Quadro de Aviso', notices_path %></b></li>
         <li><b><i class="icon-bookmark"></i> <%#= link_to 'Eventos', events_path %></b></li>
         <li><b><i class="icon-book"></i> <%#= link_to 'Livro de Ocorrências', books_path %></b></li>

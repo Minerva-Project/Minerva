@@ -1,0 +1,21 @@
+<%= render 'layouts/header' %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <div class="span2 sidebar-nav">
+      <%= render 'layouts/menu' %>
+    </div>
+
+    <div class="span8">
+    <%= @user.courses %>
+
+
+    </div>
+
+    <div class="span2 sidebar-nav pull-right">
+      <b>Publicidade</b>
+    </div>
+
+  </div>
+</div>

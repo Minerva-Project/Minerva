@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-before_filter {|controller| controller.only_for('administrator') }
+#before_filter {|controller| controller.only_for('administrator') }
 before_filter :map
 
   def index
@@ -72,11 +72,6 @@ before_filter :map
     @name = User.all.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}" ; end; }.compact
   end
 
-  def search
-    #@users = User.all
-  end
-
-
   def add
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
@@ -92,4 +87,30 @@ before_filter :map
       redirect_to course, notice: "Removido"
     end
   end
+
+  def manage
+    @user = current_user.id
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

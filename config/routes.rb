@@ -1,5 +1,8 @@
 Minerva::Application.routes.draw do
 
+  resources :schedules
+
+
   resources :users
   resources :courses
 
@@ -24,4 +27,9 @@ Minerva::Application.routes.draw do
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'
   match '/course/:id', to: 'users#search', as: 'search'
+
+
+  match '/classes/courses/:id' => 'classes#index', as: 'class'
+  #match '/classes/courses/:id' => 'classes#calendar', as: 'calendar'
+
 end

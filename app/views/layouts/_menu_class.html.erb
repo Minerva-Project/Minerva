@@ -1,0 +1,37 @@
+<style type="text/css">
+
+    #cat {
+      list-style-type:none;
+      margin-left: 0px;
+    }
+
+</style>
+
+<div class="well"><br>
+  <ul id="cat">
+    <% if current_user.has_role? :admin %>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', admin_path %></b></li>
+        <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', courses_path %></b></li>
+        <li><b><i class="icon-refresh"></i> <%= link_to 'Criar Curso', new_course_path %></b></li>
+        <li><b><i class="icon-share"></i> <%= link_to 'Usuários', users_path %></b></li>
+        <li><b><i class="icon-share"></i> <%= link_to 'Criar Usuário', new_user_path %></b></li>
+    <% end %>
+    <% if current_user.has_role? :teacher %>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Cursos', show_teacher_courses_path %></b></li>
+    <% end %>
+    <% if current_user.has_role? :student %>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', class_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Calendário', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', notices_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Vídeos', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Módulos', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Fórum', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Exames', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Quiz', show_student_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'FAQ', show_student_courses_path %></b></li>
+        <li class="divider"></li>
+    <% end %>
+    <li><b><i class="icon-off"></i> <%= link_to 'Sair', logout_path, method: :delete %></b></li>
+  </ul>
+</div>

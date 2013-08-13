@@ -4,16 +4,11 @@
   <div class="row-fluid">
 
     <div class="span2 sidebar-nav">
-      <%= render 'layouts/menu' %>
+      <%= render 'layouts/menu_class' %>
     </div>
 
     <div class="span8">
-
-    Cursos do Aluno <%= current_user.first_name %> <br><br>
-
-    <% @user.courses.each do |course| %>
-      <%= link_to course.title, class_path(course) %> <br>
-    <% end %>
+    <%= @course.title %>
 
     </div>
 
@@ -23,4 +18,3 @@
 
   </div>
 </div>
-

@@ -14,15 +14,13 @@
       </table>
       <hr>
       <%= notice %><br>
-      <b>Professor</b><br><br>
-      <%# @course.users.each do |user| %>
-        <%#= user.email %><br>
-        <%#= link_to 'remove', remove_teacher_path(user), method: :delete %><br>
-      <%# end %>
 
       <b>Aluno</b><br><br>
       <% @course.users.each do |user| %>
         <%= user.email %><br>
+        <% if user.has_role? :teacher %><br>
+          Professor <%= user.email %>
+        <% end %>
         <%= link_to 'remove', remove_student_path(user), method: :delete %><br>
       <% end %>
 

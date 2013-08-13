@@ -7,12 +7,8 @@ Minerva::Application.routes.draw do
   delete '/users/:user_id/courses/:id', to: 'courses#remove_student', as: 'remove_student'
   match  '/users/:user_id/courses/:id', to: 'courses#add_student',    as: 'add_student'
 
-
-
-
-
-#  delete  '/users/:user_id/courses/:id', to: 'courses#remove_teacher', as: 'remove_teacher'
-#  match  '/users/:user_id/courses/:id', to: 'courses#add_teacher',     as: 'add_teacher'
+  delete  '/users/:user_id/courses/:id', to: 'courses#remove_teacher', as: 'remove_teacher'
+  match  '/users/:user_id/courses/:id', to: 'courses#add_teacher',     as: 'add_teacher'
 
   devise_for :users
   resources :users, :controller => "users" do

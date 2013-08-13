@@ -11,6 +11,8 @@ gem 'devise'
 gem 'pry'
 gem 'will_paginate'
 gem 'textacular', '~> 3.0'
+gem 'cancan'
+gem 'rolify'
 
 # Gems used only for assets and not required
 # in production environments by default.

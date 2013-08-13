@@ -2,7 +2,6 @@ Minerva::Application.routes.draw do
 
   resources :notices
   resources :courses
-  #resources :users
 
   delete '/users/:user_id/courses/:id', to: 'courses#remove', as: 'remove'
   match  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'

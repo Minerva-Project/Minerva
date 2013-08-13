@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
+  def search_student
    if params[:search]
     @users = User.basic_search(params[:search]).paginate(:page => params[:page])
    else

@@ -58,7 +58,11 @@ class UsersController < ApplicationController
    end
   end
 
-  def manage
-    @user = User.find(current_user)
+  def add_teacher
+    if params[:search]
+      @users = User.basic_search(params[:search]).paginate(:page => params[:page])
+    else
+      @users = User.paginate(:page => params[:page], :per_page => 3)
+    end
   end
 end

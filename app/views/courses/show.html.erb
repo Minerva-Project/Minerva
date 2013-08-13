@@ -14,7 +14,13 @@
       </table>
       <hr>
       <%= notice %><br>
+      Professor
+      <% @course.users.each do |user| %>
+        <%= user.email %><br>
+        <%= link_to 'remove', remove_path(user), method: :delete %><br>
+      <% end %>
 
+      Aluno
       <% @course.users.each do |user| %>
         <%= user.email %><br>
         <%= link_to 'remove', remove_path(user), method: :delete %><br>
@@ -58,6 +64,7 @@
         <td>
           <%= link_to 'Conteúdo' %><br>
           <%= link_to 'Adicionar Aluno', search_path %><br>
+          <%= link_to 'Adicionar Professor', add_teacher_path %><br>
         </td>
       </tr>
     </table>

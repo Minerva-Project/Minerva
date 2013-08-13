@@ -92,25 +92,3 @@ before_filter :map
     @user = current_user.id
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

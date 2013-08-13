@@ -1,0 +1,63 @@
+<%= render 'layouts/header' %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2 sidebar-nav">
+      <%= render 'layouts/menu' %>
+    </div>
+
+    <div class="span8">
+      <table class="table">
+        <tr class="info">
+          <td><b><i class="icon-th-list"></i> Posts</b> Cursos</td>
+        </tr>
+
+<table class="table table-condensed">
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Status</th>
+    <th>Adicionar</th>
+  </tr>
+
+  <%= form_tag search_path, :method => 'get' do %>
+      <p>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search" %>
+    </p>
+  <% end %>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><b><%= link_to user.first_name + " #{user.last_name}", user %></b></td>
+      <td><%= user.email %></td>
+      <td><%= user.status %></td>
+      <td><%= link_to 'Adicionar', add_path(user), class: 'btn btn-small btn-success' %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= will_paginate @users  %>
+
+  <br />
+    </div>
+
+    <div class="span2 sidebar-nav">
+    <table class="table">
+      <tr class="error">
+        <td><b><i class=" icon-info-sign"></i> info</b></td>
+      </tr>
+      <tr>
+        <td>
+          <small>
+            Aqui você tem a possibilidade de visualizar todos os posts criados por você. Juntamente com informações
+            adicionais como a <b>data</b> em que foi criada e a <b>categoria</b> que foi anexada. Além disso, é possível
+            <b>editar</b> algum post que você deseja fazer alterações. Caso não deseje mais algum post, você pode <b>deletá-lo</b>
+            clicando em <b>excluir</b>
+          </small>
+        </td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>

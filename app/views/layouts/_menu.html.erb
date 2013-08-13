@@ -16,8 +16,13 @@
         <li><b><i class="icon-share"></i> <%= link_to 'Usuários', users_path %></b></li>
         <li><b><i class="icon-share"></i> <%= link_to 'Criar Usuário', new_user_path %></b></li>
     <% end %>
+    <% if status == "teacher" %>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Mensagens', notices_path %></b></li>
+    <% end %>
     <% if status == "student" %>
-        <li><b><i class="icon-home"></i> <%= link_to 'Home', student_home_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', student_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', student_path %></b></li>
         <li><b><i class="icon-list-alt"></i> <%#= link_to 'Quadro de Aviso', notices_path %></b></li>
         <li><b><i class="icon-bookmark"></i> <%#= link_to 'Eventos', events_path %></b></li>
         <li><b><i class="icon-book"></i> <%#= link_to 'Livro de Ocorrências', books_path %></b></li>

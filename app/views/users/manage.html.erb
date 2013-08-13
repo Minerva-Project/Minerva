@@ -8,7 +8,12 @@
     </div>
 
     <div class="span8">
-    <%= @user %>
+
+    Cursos do professor <%= current_user.first_name %> <br><br>
+
+    <% @user.courses.each do |course| %>
+      <%= link_to course.title, course_path(course) %> <br>
+    <% end %>
 
     </div>
 

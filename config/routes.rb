@@ -17,7 +17,7 @@ Minerva::Application.routes.draw do
 
   devise_scope :user do
     root to: 'devise/sessions#new'
-    get "logout", :to => "devise/sessions#destroy"
+    delete "logout", :to => "devise/sessions#destroy"
   end
 
   resources :notices

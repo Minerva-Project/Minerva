@@ -75,4 +75,8 @@ class UsersController < ApplicationController
       @users = User.paginate(:page => params[:page], :per_page => 3)
     end
   end
+
+  def manage
+    @user = current_user
+  end
 end

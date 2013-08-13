@@ -3,12 +3,8 @@ Minerva::Application.routes.draw do
   resources :users
   resources :courses
 
-
-  delete '/users/:user_id/courses/:id', to: 'courses#remove_student', as: 'remove_student'
-  match  '/users/:user_id/courses/:id', to: 'courses#add_student',    as: 'add_student'
-
-  delete  '/users/:user_id/courses/:id', to: 'courses#remove_teacher', as: 'remove_teacher'
-  match  '/users/:user_id/courses/:id', to: 'courses#add_teacher',     as: 'add_teacher'
+  delete '/users/:user_id/courses/:id', to: 'courses#remove', as: 'remove'
+  match  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'
 
   devise_for :users
   resources :users, :controller => "users" do
@@ -22,11 +18,10 @@ Minerva::Application.routes.draw do
 
   resources :notices
 
-  match '/manage' => 'users#manage'
+  match '/show_teacher_courses' => 'teachers#show_courses'
+  match '/show_student_courses' => 'students#show_courses'
   match '/admin' => 'static_pages#admin'
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'
-  match '/course/:id', to: 'users#search_student', as: 'search_student'
-  match '/course/:id', to: 'users#search_teacher', as: 'search_teacher'
-
+  match '/course/:id', to: 'users#search', as: 'search'
 end

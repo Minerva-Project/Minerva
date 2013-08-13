@@ -19,7 +19,7 @@
       <% @course.users.each do |user| %>
         <% if user.has_role? :teacher %>
           <%= user.email %>
-          <%= link_to 'remove', remove_student_path(user), method: :delete %><br>
+          <%= link_to 'remove', remove_path(user), method: :delete %><br>
         <% end %>
       <% end %>
 
@@ -28,7 +28,7 @@
       <% @course.users.each do |user| %>
         <% if user.has_role? :student %>
           <%= user.email %>
-          <%= link_to 'remove', remove_student_path(user), method: :delete %><br>
+          <%= link_to 'remove', remove_path(user), method: :delete %><br>
         <% end %>
       <% end %>
 
@@ -71,8 +71,8 @@
       <tr>
         <td>
           <%= link_to 'Conteúdo' %><br>
-          <%= link_to 'Adicionar Aluno', search_student_path %><br>
-          <%= link_to 'Adicionar Professor', search_teacher_path %><br>
+          <%= link_to 'Adicionar Aluno', search_path %><br>
+          <%= link_to 'Adicionar Professor', search_path %><br>
         </td>
       </tr>
     </table>

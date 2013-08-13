@@ -20,7 +20,7 @@
     <th>Adicionar</th>
   </tr>
 
-  <%= form_tag search_student_path, :method => 'get' do %>
+  <%= form_tag search_path, :method => 'get' do %>
       <p>
       <%= text_field_tag :search %>
       <%= submit_tag "Search" %>
@@ -32,7 +32,7 @@
       <td><b><%= link_to user.first_name + " #{user.last_name}", user %></b></td>
       <td><%= user.email %></td>
       <td><%= user.status %></td>
-      <td><%= link_to 'Adicionar', add_student_path(user), class: 'btn btn-small btn-success' %></td>
+      <td><%= link_to 'Adicionar', add_path(user), class: 'btn btn-small btn-success' %></td>
     </tr>
   <% end %>
   </table>

@@ -18,10 +18,11 @@
     <% end %>
     <% if current_user.has_role? :teacher %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
-        <li><b><i class="icon-home"></i> <%= link_to 'Turmas', manage_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Cursos', show_teacher_courses_path %></b></li>
     <% end %>
     <% if current_user.has_role? :student %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', student_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Cursos', show_student_courses_path %></b></li>
         <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', notices_path %></b></li>
         <li><b><i class="icon-list-alt"></i> <%#= link_to 'Quadro de Aviso', notices_path %></b></li>
         <li><b><i class="icon-bookmark"></i> <%#= link_to 'Eventos', events_path %></b></li>

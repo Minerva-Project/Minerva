@@ -72,14 +72,14 @@ before_filter :map
     @name = User.all.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}" ; end; }.compact
   end
 
-  def add_student
+  def add
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
     course.users << user
     redirect_to course, notice: "Criado"
   end
 
-  def remove_student
+  def remove
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
 

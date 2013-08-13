@@ -35,7 +35,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to users_url
+
+      case params[:user][:status]
+      when "admin"
+      @user.add_role :admin
+      when "teacher"
+      @user.add_role :teacher
+      when "student"
+      @user.add_role :student
+      end
+
+      redirect_to users_url, notice: "Usuario criado"
     else
       render action: 'new'
     end

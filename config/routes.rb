@@ -23,7 +23,7 @@ Minerva::Application.routes.draw do
   resources :notices
 
   match '/show_teacher_courses' => 'teachers#show_courses'
-  match '/classes/courses/:id' => 'teachers#manage_class', as: 'manage_class'
+  match '/manage/courses/:id' => 'classes#manage_class', as: 'manage_class'
 
 
   match '/show_student_courses' => 'students#show_courses'

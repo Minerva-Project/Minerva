@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-before_filter :find_user
+  before_filter :find_user
 
   def show_courses
 

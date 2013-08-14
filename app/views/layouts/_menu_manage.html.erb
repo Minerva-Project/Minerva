@@ -6,14 +6,14 @@
     }
 
 </style>
-
+      
 <div class="well"><br>
   <ul id="cat">
     <% if current_user.has_role? :teacher %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
         <li><b><i class="icon-home"></i> <%= link_to 'Cursos', show_teacher_courses_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Schedule', new_course_schedule_path(@course) %></b></li>
         <li><b></b></li>
-
     <% end %>
   </ul>
 </div>

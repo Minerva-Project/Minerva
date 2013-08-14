@@ -12,7 +12,8 @@
     Cursos do Professor <%= current_user.first_name %> <br><br>
 
     <% @user.courses.each do |course| %>
-      <%= link_to course.title, course_path(course) %> <br>
+      <%= link_to course.title, class_path(course) %> <br>
+      <i class="icon-home"></i> <%= link_to 'Schedule', new_course_schedule_path(course) %>
     <% end %>
 
     </div>

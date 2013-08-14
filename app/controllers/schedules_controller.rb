@@ -24,12 +24,8 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   # GET /schedules/new.json
   def new
+    @course = Course.find(params[:course_id])
     @schedule = Schedule.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @schedule }
-    end
   end
 
   # GET /schedules/1/edit

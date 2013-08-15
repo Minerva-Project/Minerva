@@ -6,6 +6,8 @@
       <%= render 'admin_show' %>
     <% elsif current_user.has_role? :teacher %>
       <%= render 'teacher_show' %>
+    <% elsif current_user.has_role? :student %>
+      <%= render 'student_show' %>
     <% end %>
 
   </div>

@@ -6,6 +6,8 @@
       <%= render 'admin_index' %>
     <% elsif current_user.has_role? :teacher %>
       <%= render 'teacher_index' %>
+    <% elsif current_user.has_role? :student %>
+      <%= render 'student_index' %>
     <% end %>
 
   </div>

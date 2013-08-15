@@ -6,12 +6,11 @@ Minerva::Application.routes.draw do
   resources :courses do
     resources :schedules
     resources :users
+    resources :notices
   end
 
   delete '/users/:user_id/courses/:id', to: 'courses#remove', as: 'remove'
   match  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'
-  
-  
   
   devise_for :users
   resources :users, :controller => "users" do
@@ -23,13 +22,11 @@ Minerva::Application.routes.draw do
     delete "logout", :to => "devise/sessions#destroy"
   end
 
-  resources :notices
-
  # match '/show_teacher_courses' => 'teachers#show_courses'
-  match '/manage/courses/:id' => 'classes#manage_class', as: 'manage_class'
+ # match '/manage/courses/:id' => 'classes#manage_class', as: 'manage_class'
 
 
-  match '/show_student_courses' => 'students#show_courses'
+ # match '/show_student_courses' => 'students#show_courses'
   match '/index' => 'manage#index'
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'

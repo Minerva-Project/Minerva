@@ -1,10 +1,8 @@
 <style type="text/css">
-
     #cat {
       list-style-type:none;
       margin-left: 0px;
     }
-
 </style>
 
 <div class="well"><br>
@@ -21,23 +19,8 @@
         <li><b><i class="icon-home"></i> <%= link_to 'Cursos', courses_path %></b></li>
     <% end %>
     <% if current_user.has_role? :student %>
-        <li><b><i class="icon-home"></i> <%= link_to 'Home', student_path %></b></li>
-        <li><b><i class="icon-home"></i> <%= link_to 'Cursos', show_student_courses_path %></b></li>
-        <li><b><i class="icon-home"></i> <%= link_to 'Anúncios', notices_path %></b></li>
-        <li><b><i class="icon-list-alt"></i> <%#= link_to 'Quadro de Aviso', notices_path %></b></li>
-        <li><b><i class="icon-bookmark"></i> <%#= link_to 'Eventos', events_path %></b></li>
-        <li><b><i class="icon-book"></i> <%#= link_to 'Livro de Ocorrências', books_path %></b></li>
-        <li><b><i class="icon-random"></i> <%#= link_to 'Lista de Ramais', branches_path %></b></li>
-        <li><b><i class="icon-user"></i> <%#= link_to 'Funcionários', employees_path %></b></li>
-        <li><b><i class="icon-wrench"></i> <%#= link_to 'Obras', works_path %></b></li>
-        <li><b><i class="icon-th-list"></i> <%#= link_to 'Classificados', classifieds_path %></b></li>
-        <li><b><i class="icon-barcode"></i> <%#= link_to "2 Via de Boleto", new_billet_path %></b></li>
-        <li><b><i class="icon-folder-open"></i> <%#= link_to "Documentos", documments_path %></b></li>
-        <li><b><i class="icon-picture"></i> <%#= link_to "Galeria", galleries_path %></b></li>
-        <li><b><i class="icon-check"></i> <%#= link_to "Reservas", reserves_path %></b></li>
-        <li><b><i class="icon-arrow-down"></i> <%#= link_to 'Votações', polls_path %></b></li>
-        <li><b><i class="icon-bullhorn"></i> <%#= link_to 'Anúncio', ads_path %></b></li>
-        <li class="divider"></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', index_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Cursos', courses_path %></b></li>
     <% end %>
     <li><b><i class="icon-off"></i> <%= link_to 'Sair', logout_path, method: :delete %></b></li>
   </ul>

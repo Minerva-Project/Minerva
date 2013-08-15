@@ -8,12 +8,11 @@
 <div class="well"><br>
   <ul id="cat">
     <% if current_user.has_role? :admin %>
-      <li><b><i class="icon-home"></i> <%= link_to 'Alunos', course_users_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%#= link_to 'Alunos', course_schedaule_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%#= link_to 'Add Student', course_schedule_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Students', course_users_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Add Student to Course', search_path(@course) %></b></li>
     <% elsif current_user.has_role? :teacher %>
       <li><b><i class="icon-home"></i> <%= link_to 'Schedule new', new_course_schedule_path(@course) %></b></li>
-           <li><b><i class="icon-home"></i> <%= link_to 'Add Student', course_schedule_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Add Student', course_schedule_path(@course) %></b></li>
     <% end %>
   </ul>
 </div>

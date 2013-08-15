@@ -1,23 +1,19 @@
 <%= render 'layouts/header' %>
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2 sidebar-nav">
-      <%= render 'layouts/menu' %>
+      <%= render 'shared/menu_manage' %>
     </div>
-
     <div class="span8">
       <table class="table">
         <tr class="info">
-          <td><b><i class="icon-th-list"></i Posts</b> Criar Usuário</td>
+          <td><b><i class="icon-th-list"></i> Posts</b> Criar Usuário</td>
         </tr>
       </table>
 
-        <%= render 'form' %>
-
+      <%= render 'form' %>
 
     </div>
-
     <div class="span2 sidebar-nav">
     <table class="table">
       <tr class="error">

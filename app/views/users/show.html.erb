@@ -1,19 +1,15 @@
 <%= render 'layouts/header' %>
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2 sidebar-nav">
-      <%= render 'layouts/menu' %>
+      <%= render 'shared/menu_manage' %>
     </div>
-
     <div class="span8">
       <table class="table">
         <tr class="info">
           <td><b><i class="icon-th-list"></i> Posts </b>Cursos</td>
         </tr>
       </table>
-
-      Role <br>
 
       <%= @user.roles %> <br><br>
 

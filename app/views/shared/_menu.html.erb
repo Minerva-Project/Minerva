@@ -17,7 +17,7 @@
         <li><b><i class="icon-share"></i> <%= link_to 'Criar Usuario', new_user_path %></b></li>
     <% end %>
     <% if current_user.has_role? :teacher %>
-        <li><b><i class="icon-home"></i> <%= link_to 'Home', teacher_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', index_path %></b></li>
         <li><b><i class="icon-home"></i> <%= link_to 'Cursos', courses_path %></b></li>
     <% end %>
     <% if current_user.has_role? :student %>

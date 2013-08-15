@@ -5,11 +5,14 @@ Minerva::Application.routes.draw do
 
   resources :courses do
     resources :schedules
+    resources :users
   end
 
   delete '/users/:user_id/courses/:id', to: 'courses#remove', as: 'remove'
   match  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'
-
+  
+  
+  
   devise_for :users
   resources :users, :controller => "users" do
     resources :profiles

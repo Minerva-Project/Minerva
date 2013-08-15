@@ -1,17 +1,12 @@
 <%= render 'layouts/header' %>
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2 sidebar-nav">
-      <%= render 'shared/menu' %>
-    </div>
-    <div class="span8">
 
     <% if current_user.has_role? :admin %>
-      <%= render 'show_admin' %>
+      <%= render 'admin_index' %>
     <% elsif current_user.has_role? :teacher %>
-      <%= render 'show_teacher' %>
+      <%= render 'teacher_index' %>
     <% end %>
 
-    </div>
   </div>
 </div>

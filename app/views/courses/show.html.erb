@@ -1,79 +1,12 @@
 <%= render 'layouts/header' %>
-
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2 sidebar-nav">
-      <%= render 'layouts/menu' %>
-    </div>
 
-    <div class="span7">
-      <table class="table">
-        <tr class="info">
-          <td><b><i class="icon-th-list"></i> Posts</b> <%= @course.title %> </td>
-        </tr>
-      </table>
-      <hr>
-      <%= notice %><br>
+    <% if current_user.has_role? :admin %>
+      <%= render 'admin_show' %>
+    <% elsif current_user.has_role? :teacher %>
+      <%= render 'teacher_show' %>
+    <% end %>
 
-      <p><b>Professor</b></p>
-      <% @course.users.each do |user| %>
-        <% if user.has_role? :teacher %>
-          <%= user.email %>
-          <%= link_to 'remove', remove_path(user), method: :delete %><br>
-        <% end %>
-      <% end %>
-
-      <br><br>
-      <p><b>Alunos</b></p>
-      <% @course.users.each do |user| %>
-        <% if user.has_role? :student %>
-          <%= user.email %>
-          <%= link_to 'remove', remove_path(user), method: :delete %><br>
-        <% end %>
-      <% end %>
-
-      <br><br>
-
-      <p>
-        <b>Titulo:</b>
-        <%= @course.title %>
-      </p>
-      <p>
-        <b>Instrutor:</b>
-        <%= @course.instructor %>
-      </p>
-      <p>
-        <b>Lançamento:</b>
-        <%= @course.release_date %>
-      </p>
-      <p>
-        <b>End date:</b>
-        <%= @course.end_date %>
-      </p>
-      <p>
-        <b>Description:</b>
-        <%= @course.description %>
-      </p>
-      <hr>
-
-        <%= link_to 'Editar', edit_course_path(@course), class: 'btn btn-small btn-success' %>
-        <%= link_to 'Voltar', courses_path, class: 'btn btn-small btn-info' %>
-
-    </div>
-
-    <div class="span3 sidebar-nav">
-    <table class="table">
-      <tr class="warning">
-        <td><b>Configurações</b></td>
-      </tr>
-      <tr>
-        <td>
-          <%= link_to 'Conteúdo' %><br>
-          <%= link_to 'Adicionar Aluno', search_path %><br>
-          <%= link_to 'Adicionar Professor', search_path %><br>
-        </td>
-      </tr>
-    </table>
-    </div>
   </div>
 </div>

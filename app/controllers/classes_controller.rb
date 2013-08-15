@@ -1,7 +1,7 @@
 class ClassesController < ApplicationController
 before_filter :find_class
   def index
-    @course = Course.find(params[:id])
+    #@course = Course.find(params[:id])
   end
 
   def manage_class

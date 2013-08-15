@@ -10,7 +10,7 @@
 <div class="well"><br>
   <ul id="cat">
     <% if current_user.has_role? :admin %>
-        <li><b><i class="icon-home"></i> <%= link_to 'Home', admin_path %></b></li>
+        <li><b><i class="icon-home"></i> <%= link_to 'Home', index_path %></b></li>
         <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', courses_path %></b></li>
         <li><b><i class="icon-refresh"></i> <%= link_to 'Criar Curso', new_course_path %></b></li>
         <li><b><i class="icon-share"></i> <%= link_to 'Usuários', users_path %></b></li>

@@ -1,6 +1,16 @@
-<h1>Editing schedule</h1>
+<%= render 'layouts/header' %>
 
-<%= render 'form' %>
+<div class="container-fluid">
+  <div class="row-fluid">
 
-<%= link_to 'Show', @schedule %> |
-<%= link_to 'Back', schedules_path %>
+    <div class="span2 sidebar-nav">
+      <%= render 'layouts/menu_manage' %>
+    </div>
+
+    <div class="span8">
+    
+    <p id="notice"><%= notice %></p>
+    <%= render 'form' %>
+
+</div>
+

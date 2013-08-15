@@ -5,9 +5,6 @@ class TeachersController < ApplicationController
 
   end
 
-  def manage_class
-    @class = @user.courses.find(params[:id])
-  end
 
 
 

@@ -1,4 +1,6 @@
-Minerva::Application.routes.draw do
+  Minerva::Application.routes.draw do
+
+  get "manage/index"
 
   resources :users
   resources :courses
@@ -27,7 +29,7 @@ Minerva::Application.routes.draw do
 
 
   match '/show_student_courses' => 'students#show_courses'
-  match '/admin' => 'static_pages#admin'
+  match '/index' => 'manage#index'
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'
   match '/course/:id', to: 'users#search', as: 'search'
@@ -35,6 +37,5 @@ Minerva::Application.routes.draw do
   match '/classes/courses/:id' => 'classes#index',   as: 'class'
   #match '/courses/:course_id/schedules/:id'       => 'schedules#index', as: 'manage_schedules'
   #match '/courses/:course_id/schedules/:id'       => 'schedules#index', as: 'schedules'
-
 
 end

@@ -1,7 +1,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container-fluid">
-      <%= link_to 'Painel de Controle', admin_path, class: "brand" %>
+      <%= link_to 'Painel de Controle', index_path, class: "brand" %>
             <% if user_signed_in? %>
               <span class="navbar-text pull-right">Bem Vindo: <strong><%= current_user.email %></strong>
               <%#= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |

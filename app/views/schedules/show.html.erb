@@ -1,28 +1,27 @@
 <%= render 'layouts/header' %>
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2 sidebar-nav">
-      <%= render 'layouts/menu_manage' %>
+      <%= render 'shared/menu_manage' %>
     </div>
-
     <div class="span8">
-
       <p id="notice"><%= notice %></p>
-
-        <table border="0">
+    <% if @course.schedule == nil %>
+      No Schedule
+    <% else %>
+      <table border="0">
         <tr>
-          <td><%= @schedule.title %></td>
+          <td><%= @course.schedule.title %></td>
         </tr>
         <tr>
-          <td><%= @schedule.content %> </td>
+          <td><%= @course.schedule.content %> </td>
         </tr>
         <tr>
-          <td><%= link_to 'Edit', edit_course_schedule_path(@schedule) %></td>
-          <td><%= link_to 'Delete', remove_schedule_path, method: :delete %></td>
+          <td><%#= link_to 'Edit', edit_course_schedule_path(@schedule) %></td>
+          <td><%#= link_to 'Delete', remove_schedule_path, method: :delete %></td>
         </tr>
       </table>
+    <% end %>
     </div>
   </div>
 </div>
-

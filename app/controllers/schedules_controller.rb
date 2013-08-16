@@ -2,19 +2,13 @@ class SchedulesController < ApplicationController
   before_filter :load_course
 
   def index
-    @schedules = Schedule.all
+    @course = Course.find_by_id(params[:course_id])
+    @schedule = Schedule.all
   end
 
   def show
-    @schedule = Schedule.new
-    id = @course.id
-    @schedule = Schedule.find_by_id(id)
-
-    if @schedule == nil
-      render 'new'
-    else
-
-    end
+    @course = Course.find_by_id(params[:course_id])
+    @schedule = Schedule.find_by_id(params[:id])
   end
 
   def new

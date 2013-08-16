@@ -6,11 +6,15 @@
     </div>
     <div class="span8">
 
-    <% if @schedule != nil %>
+    <% if @course.schedule != nil %>
       <%= @course.schedule.title %> <br />
       <%= @course.schedule.content %> <br />
     <% else %>  
-      No content
+      <% if current_user.has_role? :teacher %>
+        <%= link_to 'Create Schedule', new_course_schedule_path(@course)  %>
+      <% else %>
+        No defined Schedule yet.
+      <% end %>
     <% end %>
 
     </div>

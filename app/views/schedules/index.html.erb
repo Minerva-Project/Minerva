@@ -4,21 +4,37 @@
     <div class="span2 sidebar-nav">
       <%= render 'shared/menu_manage' %>
     </div>
-    <div class="span8">
-
-    <% if @course.schedule != nil %>
-      <%= @course.schedule.title %> <br />
-      <%= @course.schedule.content %> <br />
-    <% else %>  
-      <% if current_user.has_role? :teacher %>
-        <%= link_to 'Create Schedule', new_course_schedule_path(@course)  %>
+    <div class="span7">
+      <table class="table">
+        <tr class="info">
+          <td><b><i class="icon-th-list"></i> Theacher show courses</b> <%= @course.title %> </td>
+        </tr>
+      </table>
+      <% if @course.schedule != nil %>
+        <%= @course.schedule.title %> <br />
+        <%= @course.schedule.content %> <br />
       <% else %>
-        No defined Schedule yet.
+        <% if current_user.has_role? :teacher %>
+          <%= link_to 'Create Schedule', new_course_schedule_path(@course) %>
+        <% else %>
+          No defined Schedule yet.
+        <% end %>
       <% end %>
-    <% end %>
+      <%= link_to 'Back', :back %>
+    </div>
 
+    <div class="span3 sidebar-nav">
+      <table class="table">
+        <tr class="warning">
+          <td><b>Configurações</b></td>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
-
 <%#= link_to 'New Schedule', new_schedule_path %>

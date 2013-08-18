@@ -11,7 +11,7 @@
       <li><b><i class="icon-home"></i> <%= link_to 'Students', course_users_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%= link_to 'Add Student to Course', search_path(@course) %></b></li>
     <% elsif current_user.has_role? :teacher %>
-      <li><b><i class="icon-home"></i> <%= link_to 'Schedule', course_schedules_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Schedule', course_schedule_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%= link_to 'Students class', course_users_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%#= link_to 'Students class', course_users_path(@course) %></b></li>
     <% elsif current_user.has_role? :student %>

@@ -4,31 +4,31 @@ describe NoticesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/notices").should route_to("notices#index")
+      get("/courses/1/notices").should route_to("notices#index", :course_id => "1")
     end
 
     it "routes to #new" do
-      get("/notices/new").should route_to("notices#new")
+      get("/courses/1/notices/new").should route_to("notices#new", :course_id => "1")
     end
 
     it "routes to #show" do
-      get("/notices/1").should route_to("notices#show", :id => "1")
+      get("/courses/1/notices/1").should route_to("notices#show", :course_id => "1", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/notices/1/edit").should route_to("notices#edit", :id => "1")
+      get("/courses/1/notices/1/edit").should route_to("notices#edit", :course_id => "1", :id => "1")
     end
 
     it "routes to #create" do
-      post("/notices").should route_to("notices#create")
+      post("/courses/1/notices").should route_to("notices#create", :course_id => "1")
     end
 
     it "routes to #update" do
-      put("/notices/1").should route_to("notices#update", :id => "1")
+      put("/courses/1/notices/1").should route_to("notices#update", :course_id => "1", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/notices/1").should route_to("notices#destroy", :id => "1")
+      delete("/courses/1/notices/1").should route_to("notices#destroy", :course_id => "1", :id => "1")
     end
 
   end

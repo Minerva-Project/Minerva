@@ -17,3 +17,6 @@
 #Ignore environment garbage files
 .rbenv-gemsets
 .rvmrc
+
+#Ignore database config
+/config/database.yml

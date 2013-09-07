@@ -14,5 +14,9 @@
 /log/*.log
 /tmp
 
+<<<<<<< HEAD
 #Ignore environment garbage files
+=======
+#Ignore garbage files
+>>>>>>> 52b6138f019867dddbf2000c01767964379a7092
 .rbenv-gemsets

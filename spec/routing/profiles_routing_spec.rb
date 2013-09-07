@@ -4,31 +4,31 @@ describe ProfilesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/profiles").should route_to("profiles#index")
+      get("/users/1/profiles").should route_to("profiles#index", :user_id =>"1")
     end
 
     it "routes to #new" do
-      get("/profiles/new").should route_to("profiles#new")
+      get("/users/1/profiles/new").should route_to("profiles#new",:user_id => "1")
     end
 
     it "routes to #show" do
-      get("/profiles/1").should route_to("profiles#show", :id => "1")
+      get("/users/1/profiles/1").should route_to("profiles#show", :user_id => "1", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/profiles/1/edit").should route_to("profiles#edit", :id => "1")
+      get("/users/1/profiles/1/edit").should route_to("profiles#edit", :user_id => "1", :id => "1")
     end
 
     it "routes to #create" do
-      post("/profiles").should route_to("profiles#create")
+      post("/users/1/profiles").should route_to("profiles#create", :user_id => "1")
     end
 
     it "routes to #update" do
-      put("/profiles/1").should route_to("profiles#update", :id => "1")
+      put("/users/1/profiles/1").should route_to("profiles#update", :user_id => "1", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/profiles/1").should route_to("profiles#destroy", :id => "1")
+      delete("/users/1/profiles/1").should route_to("profiles#destroy", :user_id => "1", :id => "1")
     end
 
   end

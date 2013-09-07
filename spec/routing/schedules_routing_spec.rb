@@ -4,31 +4,31 @@ describe SchedulesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/schedules").should route_to("schedules#index")
+      get("/courses/1/schedules").should route_to("schedules#index", course_id: "1")
     end
 
     it "routes to #new" do
-      get("/schedules/new").should route_to("schedules#new")
+      get("/courses/1/schedules/new").should route_to("schedules#new", course_id: "1")
     end
 
     it "routes to #show" do
-      get("/schedules/1").should route_to("schedules#show", :id => "1")
+      get("/courses/1/schedules/1").should route_to("schedules#show", course_id: "1", id: "1")
     end
 
     it "routes to #edit" do
-      get("/schedules/1/edit").should route_to("schedules#edit", :id => "1")
+      get("/courses/1/schedules/1/edit").should route_to("schedules#edit", course_id: "1", id: "1")
     end
 
     it "routes to #create" do
-      post("/schedules").should route_to("schedules#create")
+      post("/courses/1/schedules").should route_to("schedules#create", course_id: "1")
     end
 
     it "routes to #update" do
-      put("/schedules/1").should route_to("schedules#update", :id => "1")
+      put("/courses/1/schedules/1").should route_to("schedules#update", course_id: "1", id: "1")
     end
 
     it "routes to #destroy" do
-      delete("/schedules/1").should route_to("schedules#destroy", :id => "1")
+      delete("/courses/1/schedules/1").should route_to("schedules#destroy", course_id: "1", id: "1")
     end
 
   end

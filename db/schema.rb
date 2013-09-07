@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130813224634) do
 
-  create_table "calendars", :force => true do |t|
-    t.string   "title"
-    t.date     "release_date"
-    t.date     "end_date"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "courses", :force => true do |t|
     t.string   "title"
     t.string   "instructor"

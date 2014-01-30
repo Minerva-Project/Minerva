@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813224634) do
+ActiveRecord::Schema.define(:version => 20140130135725) do
+
+  create_table "calendars", :force => true do |t|
+    t.string   "title"
+    t.date     "release_date"
+    t.date     "end_date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "title"
@@ -88,7 +96,7 @@ ActiveRecord::Schema.define(:version => 20130813224634) do
     t.string   "country"
     t.string   "telephone"
     t.string   "web_site"
-    t.string   "status"
+    t.string   "role"
     t.string   "sex"
     t.text     "observation"
     t.string   "courses"

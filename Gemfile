@@ -8,9 +8,6 @@ gem 'devise'
 gem 'pry'
 gem 'will_paginate'
 gem 'textacular', '~> 3.0'
-gem 'cancan'
-gem 'rolify'
-
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

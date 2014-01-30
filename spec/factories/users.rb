@@ -2,18 +2,18 @@ FactoryGirl.define do
   factory :admin, :class=>'user' do
     email 'londerson@gmail.com'
     password '12345678'
-    status 'admin'
+    role 'admin'
   end
   
   factory :student, :class=>'user' do
     email 'londerson@gmail.com'
     password '12345678'
-    status 'student'
+    role 'student'
   end
   
   factory :teacher, :class=>'user' do
     email 'londerson@gmail.com'
     password '12345678'
-    status 'teacher'
+    role 'teacher'
   end
 end

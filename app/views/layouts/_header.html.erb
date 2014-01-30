@@ -5,7 +5,7 @@
             <% if user_signed_in? %>
               <span class="navbar-text pull-right">Bem Vindo: <strong><%= current_user.email %></strong>
               <%#= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-              <strong><%= current_user.roles.name %></strong> |
+              <strong><%= current_user.role %></strong> |
               <strong><%= link_to "Sair", logout_path, method: :delete, class: "navbar-link" %></strong>
             <% else %>
               <%#= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>

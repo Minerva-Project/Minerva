@@ -60,7 +60,7 @@ before_filter :map
   end
 
   def map
-    @name = User.all.map{ |u| if u.status == 'teacher'; u.first_name + " #{u.last_name}" ; end; }.compact
+    @name = User.all.map{ |u| if u.role == 'teacher' and u.first_name != nil; u.first_name + " #{u.last_name}" ; end; }.compact
   end
 
   def add

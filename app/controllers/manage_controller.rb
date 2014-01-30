@@ -1,7 +1,7 @@
 class ManageController < ApplicationController
   
   def index
-    case current_user.status
+    case current_user.role
     when "admin"
       redirect_to admin_path
     when "teacher"

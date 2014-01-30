@@ -2,11 +2,11 @@
 <div class="container-fluid">
   <div class="row-fluid">
 
-    <% if current_user.has_role? :admin %>
+    <% if current_user.role == 'admin' %>
       <%= render 'admin_show' %>
-    <% elsif current_user.has_role? :teacher %>
+    <% elsif current_user.role == 'teacher' %>
       <%= render 'teacher_show' %>
-    <% elsif current_user.has_role? :student %>
+    <% elsif current_user.role 'student' %>
       <%= render 'student_show' %>
     <% end %>
 

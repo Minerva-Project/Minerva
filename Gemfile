@@ -22,6 +22,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner', "0.9.1"
+  gem 'spork', '0.9.2'
   gem 'capybara'
 end
 

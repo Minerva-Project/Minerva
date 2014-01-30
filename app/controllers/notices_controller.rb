@@ -1,6 +1,5 @@
 class NoticesController < ApplicationController
-  # GET /notices
-  # GET /notices.json
+
   def index
     @notices = Notice.all
 
@@ -10,8 +9,6 @@ class NoticesController < ApplicationController
     end
   end
 
-  # GET /notices/1
-  # GET /notices/1.json
   def show
     @notice = Notice.find(params[:id])
 
@@ -21,8 +18,6 @@ class NoticesController < ApplicationController
     end
   end
 
-  # GET /notices/new
-  # GET /notices/new.json
   def new
     @notice = Notice.new
 
@@ -32,13 +27,10 @@ class NoticesController < ApplicationController
     end
   end
 
-  # GET /notices/1/edit
   def edit
     @notice = Notice.find(params[:id])
   end
 
-  # POST /notices
-  # POST /notices.json
   def create
     @notice = Notice.new(params[:notice])
 
@@ -53,8 +45,6 @@ class NoticesController < ApplicationController
     end
   end
 
-  # PUT /notices/1
-  # PUT /notices/1.json
   def update
     @notice = Notice.find(params[:id])
 
@@ -69,8 +59,6 @@ class NoticesController < ApplicationController
     end
   end
 
-  # DELETE /notices/1
-  # DELETE /notices/1.json
   def destroy
     @notice = Notice.find(params[:id])
     @notice.destroy

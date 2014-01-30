@@ -7,19 +7,11 @@ before_filter :map
   def index
     @courses = Course.all
     @user = current_user
-    pp @user
   end
-
 
   def show
     @course = Course.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @course }
-    end
   end
-
 
   def new
     @course = Course.new

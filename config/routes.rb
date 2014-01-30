@@ -25,6 +25,7 @@ Minerva::Application.routes.draw do
   match '/index' => 'manage#index'
   match '/teacher' => 'static_pages#teacher'
   match '/student' => 'static_pages#student'
+  match '/admin' => 'static_pages#admin'
   match '/course/:id', to: 'users#search', as: 'search'
 
 end

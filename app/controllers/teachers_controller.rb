@@ -5,9 +5,6 @@ class TeachersController < ApplicationController
 
   end
 
-
-
-
   def find_user
     @user = current_user
   end

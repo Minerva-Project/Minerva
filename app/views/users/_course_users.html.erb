@@ -13,7 +13,6 @@
         <th>Email</th>
         <th>Status</th>
         <th>Término</th>
-        <th>Editar</th>
         <th>Excluir</th>
       </tr>
 
@@ -22,10 +21,9 @@
       <tr>
         <td><b><%= link_to user.first_name + " #{user.last_name}", user %></b></td>
         <td><%= user.email %></td>
-        <td><%= user.status %></td>
+        <td><%= user.role %></td>
         <td><%= user.state %></td>
-        <td><%#= link_to 'Editar', edit_user_path(user), class: 'btn btn-small btn-success' %></td>
-        <td><%#= link_to 'Excluir', user, method: :delete, data: { confirm: 'Deseja excluir?' }, class: 'btn btn-small btn-danger' %></td>
+        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Deseja excluir?' }, class: 'btn btn-small btn-danger' %></td>
       </tr>
     <% end %>
     </table>

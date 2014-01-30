@@ -11,19 +11,14 @@
   <%= notice %><br>
   <p><b>Professor</b></p>
   <% @course.users.each do |user| %>
-    <% if user.has_role? :teacher %>
+    <% if user.role == 'teacher' %>
       <%= user.email %>
       <%= link_to 'remove', remove_path(user), method: :delete %><br>
     <% end %>
   <% end %>
   <br><br>
-  <p><b>Alunos</b></p>
-  <% @course.users.each do |user| %>
-    <% if user.has_role? :student %>
-      <%= user.email %>
-      <%= link_to 'remove', remove_path(user), method: :delete %><br>
-    <% end %>
-  <% end %>
+  <p><b>Qtd Alunos</b></p>
+  <%= @course.users.all.size %>
   <br><br>
   <p>
     <b>Titulo:</b>

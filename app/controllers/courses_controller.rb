@@ -1,7 +1,4 @@
-require 'pp'
-
 class CoursesController < ApplicationController
-#before_filter {|controller| controller.only_for('administrator') }
 before_filter :map
 
   def index
@@ -24,28 +21,20 @@ before_filter :map
   def create
     @course = Course.new(params[:course])
 
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'O curso foi criado corretamente.' }
-        format.json { render json: @course, status: :created, location: @course }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    if @course.save
+      redirect_to @course, notice: 'O curso foi criado corretamente.'
+    else
+      render action: "new"
     end
   end
 
   def update
     @course = Course.find(params[:id])
 
-    respond_to do |format|
-      if @course.update_attributes(params[:course])
-        format.html { redirect_to @course, notice: 'O curso foi atualizado corretamente.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    if @course.update_attributes(params[:course])
+      redirect_to @course, notice: 'O curso foi atualizado corretamente.'
+    else
+      render action: "edit"
     end
   end
 
@@ -53,10 +42,7 @@ before_filter :map
     @course = Course.find(params[:id])
     @course.destroy
 
-    respond_to do |format|
-      format.html { redirect_to courses_url }
-      format.json { head :no_content }
-    end
+    redirect_to courses_url
   end
 
   def map
@@ -78,5 +64,4 @@ before_filter :map
       redirect_to course, notice: "Removido"
     end
   end
-
 end

@@ -1,28 +1,31 @@
 <div class="span2 sidebar-nav">
   <%= render 'shared/menu_manage' %>
 </div>
+
 <div class="span8">
+
   <table class="table">
     <tr class="info">
-      <td><b><i class="icon-th-list"></i> Student Courses</b> </td>
+      <td><b><i class="icon-th-list"></i> Seus Cursos</b> </td>
     </tr>
   </table>
+  
   <table class="table table-condensed">
     <tr>
       <th>Titulo</th>
       <th>Instrutor</th>
     </tr>
-  <% @courses.each do |course| %>
+  <% @user.courses.each do |course| %>
     <tr>
       <td><b><%= link_to course.title, course %></b></td>
       <td><%= course.instructor %></td>
     </tr>
   <% end %>
   </table>
-  <br />
-  </div>
+  
+</div>
 
-  <div class="span2 sidebar-nav">
+<div class="span2 sidebar-nav">
   <table class="table">
     <tr class="error">
       <td><b><i class=" icon-info-sign"></i> info</b></td>

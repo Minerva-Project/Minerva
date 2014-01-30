@@ -1,14 +1,13 @@
+require 'pp'
+
 class CoursesController < ApplicationController
 #before_filter {|controller| controller.only_for('administrator') }
 before_filter :map
 
   def index
     @courses = Course.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
+    @user = current_user
+    pp @user
   end
 
 
@@ -35,7 +34,7 @@ before_filter :map
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'O curso foi criado corretamente.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }
@@ -49,7 +48,7 @@ before_filter :map
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to @course, notice: 'O curso foi atualizado corretamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

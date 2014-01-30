@@ -8,15 +8,15 @@
 <div class="well"><br>
   <ul id="cat">
     <% if current_user.has_role? :admin %>
-      <li><b><i class="icon-home"></i> <%= link_to 'Students', course_users_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%= link_to 'Add Student to Course', search_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Alunos do curso', course_users_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Adicionar aluno ', search_path(@course) %></b></li>
     <% elsif current_user.has_role? :teacher %>
-      <li><b><i class="icon-home"></i> <%= link_to 'Schedule', course_schedule_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%= link_to 'Students class', course_users_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Programação', course_schedule_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Programação da turma', course_users_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%#= link_to 'Students class', course_users_path(@course) %></b></li>
     <% elsif current_user.has_role? :student %>
-      <li><b><i class="icon-home"></i> <%= link_to 'Schedules', course_schedule_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%= link_to 'Notices', course_notices_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Programação', course_schedule_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Notícias', course_notices_path(@course) %></b></li>
     <% end %>
   </ul>
 </div>

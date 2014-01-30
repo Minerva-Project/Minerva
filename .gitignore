@@ -20,3 +20,7 @@
 
 #Ignore database config
 /config/database.yml
+
+
+#Ignore todo list
+todo.list

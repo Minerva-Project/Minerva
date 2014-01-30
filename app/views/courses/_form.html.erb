@@ -5,7 +5,7 @@
     <td><p><b>Título</b></p><%= f.text_field :title, placeholder: 'Título', class: 'span6' %></td>
   </tr>
   <tr>
-    <td><p><b>Instrutor</b></p> <%#= f.select :instructor, options_for_select(@name) %></td>
+    <td><p><b>Instrutor</b></p> <%= f.select :instructor, options_for_select(@name) %></td>
   </tr>
   <tr>
     <td><p><b>Início</b></p> <%= f.date_select :release_date %></td>

@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+         
+  validates :first_name, presence: true
 
   has_one :profile
   has_and_belongs_to_many :courses

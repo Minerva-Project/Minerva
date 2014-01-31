@@ -1,5 +1,6 @@
 Minerva::Application.routes.draw do
 
+  resources :logs
   resources :users
   resources :courses
 

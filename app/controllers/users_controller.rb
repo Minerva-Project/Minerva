@@ -34,22 +34,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-
-      case params[:user][:status]
-      when "admin"
-        @user.add_role :admin
-      when "teacher"
-        @user.add_role :teacher
-      when "student"
-        @user.add_role :student
-      end
-
+    user = User.new(params[:user])
+    
+    if user.save
       redirect_to users_url, notice: "Usuario criado"
     else
-      render action: 'new'
+      render 'new'
     end
+    
+    create_log user
   end
 
   def destroy
@@ -67,5 +60,11 @@ class UsersController < ApplicationController
    else
     @users = User.paginate(:page => params[:page], :per_page => 3)
    end
+  end
+  
+  def create_log user
+    time = Time.now
+    text = "#{current_user.first_name} #{current_user.last_name} criou o usuario #{user.first_name} #{user.last_name} at #{time}"
+    Log.create(:text=>text)
   end
 end

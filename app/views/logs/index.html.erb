@@ -1,0 +1,27 @@
+<%= render 'layouts/header' %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+  
+    <div class="span2 sidebar-nav">
+      <%= render 'shared/menu_manage' %>
+    </div>
+    
+    <div class="span8">
+      <h3>Logs</h3>
+      
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <% @logs.each do |log| %>
+            <p id="text-log"><%= log.text %></p>
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  
+  <div class="span2 sidebar-nav pull-right">
+    <b>Publicidade</b>
+  </div>
+  
+</div>

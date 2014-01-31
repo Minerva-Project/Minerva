@@ -9,10 +9,8 @@
   <ul id="cat">
     <% if current_user.role == 'admin' %>
         <li><b><i class="icon-home"></i> <%= link_to 'Home', index_path %></b></li>
-        <li><b><i class="icon-refresh"></i> <%= link_to 'Cursos', courses_path %></b></li>
-        <li><b><i class="icon-share"></i> <%= link_to 'Usuários', users_path %></b></li>
-        <li><b><i class="icon-refresh"></i> <%= link_to 'Criar Curso', new_course_path %></b></li>
-        <li><b><i class="icon-share"></i> <%= link_to 'Criar Usuario', new_user_path %></b></li>
+        <li><b><i class="icon-refresh"></i> <%= link_to 'Gerenciar Cursos', courses_path %></b></li>
+        <li><b><i class="icon-share"></i> <%= link_to 'Gerenciar Usuários', users_path %></b></li>
         <li><b><i class="icon-share"></i> <%= link_to 'Histórico', logs_path %></b></li>
     <% end %>
     <% if current_user.role == 'teacher' %>

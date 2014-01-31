@@ -19,13 +19,15 @@ before_filter :map
   end
 
   def create
-    @course = Course.new(params[:course])
+    course = Course.new(params[:course])
 
-    if @course.save
-      redirect_to @course, notice: 'O curso foi criado corretamente.'
+    if course.save
+      redirect_to course, notice: 'O curso foi criado corretamente.'
     else
-      render action: "new"
+      render "new"
     end
+    
+    create_log(course, "create")
   end
 
   def update
@@ -39,10 +41,11 @@ before_filter :map
   end
 
   def destroy
-    @course = Course.find(params[:id])
-    @course.destroy
-
+    course = Course.find(params[:id])
+    course.destroy
     redirect_to courses_url
+    
+    create_log(course, "destroy")
   end
 
   def map
@@ -63,5 +66,14 @@ before_filter :map
     if  course.users.destroy user
       redirect_to course, notice: "Removido"
     end
+  end
+  
+  def create_log(course, action)
+    date_time = DateTime.now
+    action = action
+    user_action = "#{current_user.first_name} #{current_user.last_name}"
+    target = course.title
+    body = {:user_action=>user_action, :action=>action, :target=>target, :date_time=>date_time}
+    Log.create(body)
   end
 end

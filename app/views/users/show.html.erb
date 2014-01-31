@@ -1,9 +1,11 @@
 <%= render 'layouts/header' %>
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2 sidebar-nav">
+  
+    <div class="span3 sidebar-nav">
       <%= render 'shared/menu_manage' %>
     </div>
+    
     <div class="span8">
       <table class="table">
         <tr class="info">
@@ -18,8 +20,8 @@
       <% end  %>
 
       <% if @profile != nil %>
-        <%= link_to 'Editar Profile', edit_user_profile_path(@user), class: 'btn btn-small btn-info' %>
-        <%= link_to 'Mostar Profile', user_profile_path(@user), class: 'btn btn-small btn-info' %> <br>
+        <%= link_to 'Editar perfil', edit_user_profile_path(@user), class: 'btn btn-small btn-info' %>
+        <%= link_to 'Mostar perfil', user_profile_path(@user), class: 'btn btn-small btn-info' %> <br>
         <% else %>
         <%= link_to 'Criar Profile', new_user_profile_path(@user) %> <br>
       <% end %>
@@ -35,7 +37,7 @@
           <td class="span6"><b>Email:</b> <%= @user.email %></td>
         </tr>
           <tr>
-          <td class="span6"><b>Courses:</b> <%= @user.courses %></td>
+          <td class="span6"><b>Qtd cursos inscrito:</b> <%= @user.courses.size %></td>
         </tr>
         <tr>
           <td class="span6"><b>Telefone:</b> <%= @user.telephone %></td>
@@ -64,24 +66,6 @@
       </table>
 
       <br />
-    </div>
-
-    <div class="span2 sidebar-nav">
-    <table class="table">
-      <tr class="error">
-        <td><b><i class=" icon-info-sign"></i> info </b></td>
-      </tr>
-      <tr>
-        <td>
-          <small>
-            Aqui você tem a possibilidade de visualizar todos os posts criados por você. Juntamente com informações
-            adicionais como a <b>data</b> em que foi criada e a <b>categoria</b> que foi anexada. Além disso, é possível
-            <b>editar</b> algum post que você deseja fazer alterações. Caso não deseje mais algum post, você pode <b>deletá-lo</b>
-            clicando em <b>excluir</b>
-          </small>
-        </td>
-      </tr>
-    </table>
     </div>
   </div>
 </div>

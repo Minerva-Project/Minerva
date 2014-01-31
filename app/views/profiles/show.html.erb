@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2 sidebar-nav">
+    <div class="span3 sidebar-nav">
       <%= render 'shared/menu_manage' %>
     </div>
 
@@ -13,40 +13,21 @@
         </tr>
       </table>
 
-  <b>Imagem:</b>
-  <%= @profile.image %><br/>
+      <b>Imagem:</b>
+      <%= @profile.image %><br/>
 
-  <b>Emprego:</b>
-  <%= @profile.job %><br/>
+      <b>Emprego:</b>
+      <%= @profile.job %><br/>
 
-  <b>Escola:</b>
-  <%= @profile.school %><br/>
+      <b>Escola:</b>
+      <%= @profile.school %><br/>
 
-  <b>Linguas:</b>
-  <%= @profile.languages %><br/>
+      <b>Linguas:</b>
+      <%= @profile.languages %><br/>
 
-  <b>Religion:</b>
-  <%= @profile.religion %><br/>
+      <b>Religion:</b>
+      <%= @profile.religion %><br/>
 
-<br />
-    </div>
-
-    <div class="span2 sidebar-nav">
-    <table class="table">
-      <tr class="error">
-        <td><b><i class=" icon-info-sign"></i> info</b></td>
-      </tr>
-      <tr>
-        <td>
-          <small>
-            Aqui você tem a possibilidade de visualizar todos os posts criados por você. Juntamente com informações
-            adicionais como a <b>data</b> em que foi criada e a <b>categoria</b> que foi anexada. Além disso, é possível
-            <b>editar</b> algum post que você deseja fazer alterações. Caso não deseje mais algum post, você pode <b>deletá-lo</b>
-            clicando em <b>excluir</b>
-          </small>
-        </td>
-      </tr>
-    </table>
     </div>
   </div>
 </div>

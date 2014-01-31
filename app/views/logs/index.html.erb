@@ -1,33 +1,29 @@
 <%= render 'layouts/header' %>
 
 <div class="container-fluid">
+
   <div class="row-fluid">
   
-    <div class="span2 sidebar-nav">
+    <div class="span3 sidebar-nav">
       <%= render 'shared/menu_manage' %>
     </div>
     
     <div class="span8">
+    
       <h3>Logs</h3>
-      
       <div class="container-fluid">
+      
         <div class="row-fluid">
           <% @logs.each do |log| %>
             <p id="text-log">
-              <%= log.user_action %> 
-              <%= log.action %> -
-              <%= log.target %>
-              at
-              <%= log.date_time %>
+              <%= "#{log.user_action} #{log.action} #{log.target} #{log.date_time}"%>
             </p>
           <% end %>
         </div>
+        
       </div>
       
     </div>
-  
-  <div class="span2 sidebar-nav pull-right">
-    <b>Publicidade</b>
   </div>
   
 </div>

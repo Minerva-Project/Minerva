@@ -14,7 +14,7 @@ FactoryGirl.define do
   end
   
   factory :teacher, :class=>'user' do
-    first 'Samura'
+    first_name 'Samura'
     email 'samura@gmail.com'
     password '12345678'
     role 'teacher'

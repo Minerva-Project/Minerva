@@ -4,7 +4,6 @@ class NoticesController < ApplicationController
     @notices = Notice.all
 
     respond_to do |format|
-      format.html # index.html.erb
       format.json { render json: @notices }
     end
   end

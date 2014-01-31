@@ -35,23 +35,22 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(params[:user])
-    
     if user.save
       redirect_to users_url, notice: "Usuario criado"
     else
       render 'new'
     end
-    
-    create_log user
+    create_log(user, "create")
   end
 
   def destroy
-    @user = User.find(params[:id])
-    if @user.destroy
+    user = User.find(params[:id])
+    if user.destroy
       redirect_to users_path
     else
       render 'new'
     end
+    create_log(user, "destroy")
   end
 
   def search
@@ -62,9 +61,12 @@ class UsersController < ApplicationController
    end
   end
   
-  def create_log user
-    time = Time.now
-    text = "#{current_user.first_name} #{current_user.last_name} criou o usuario #{user.first_name} #{user.last_name} at #{time}"
-    Log.create(:text=>text)
+  def create_log(user, action)
+    date_time = DateTime.now
+    action = action
+    user_action = "#{current_user.first_name} #{current_user.last_name}"
+    target = "#{user.first_name} #{user.last_name}"
+    body = {:user_action=>user_action, :action=>action, :target=>target, :date_time=>date_time}
+    Log.create(body)
   end
 end

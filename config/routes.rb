@@ -3,6 +3,8 @@ Minerva::Application.routes.draw do
   resources :logs
   resources :users
   resources :courses
+  resources :notices
+  resources :users
 
   resources :courses do
     resources :schedules

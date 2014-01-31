@@ -1,3 +1,3 @@
 class Log < ActiveRecord::Base
-  attr_accessible :text
+  attr_accessible :action, :target, :date_time, :user_action
 end

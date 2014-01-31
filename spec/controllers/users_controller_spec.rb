@@ -14,4 +14,18 @@ describe UsersController do
       Log.all.size.should == 1
     end
   end
+  
+  describe "POST destroy" do
+    it "create a log note when a user is deleted" do
+      admin = FactoryGirl.create(:admin)
+      sign_in :user, admin
+      user_destroyed = FactoryGirl.create(:student)
+      
+      User.all.size.should == 2            
+      post :destroy, :id=> user_destroyed.id
+      
+      User.all.size.should == 1
+      Log.all.size.should == 1
+    end
+  end
 end

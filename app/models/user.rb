@@ -7,7 +7,7 @@ class User
   field :role, :type => String, :default => ""
   field :first_name, :type => String, :default => ""
   
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name
 
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""

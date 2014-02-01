@@ -1,25 +1,15 @@
-<%= form_for(@notice) do |f| %>
-  <% if @notice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
-
-      <ul>
-      <% @notice.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="span8">
+  <%= form_for(@notice) do |f| %>
+    <div class="field">
+      <p><b>Título da notícia</b></p>
+      <%= f.text_field :title, :class=>"input-xxlarge" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="field">
+      <p><b>Conteúdo da notícia</b></p>
+      <%= f.text_area :content, :rows=>"5", :class=>"input-xxlarge" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "criar notícia", :class=>"btn btn-small btn btn-success" %>
+    </div>
+  <% end %>  
+</div>

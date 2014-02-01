@@ -2,10 +2,6 @@ class NoticesController < ApplicationController
 
   def index
     @notices = Notice.all
-
-    respond_to do |format|
-      format.json { render json: @notices }
-    end
   end
 
   def show

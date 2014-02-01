@@ -13,7 +13,7 @@
     <% elsif current_user.role == 'teacher' %>
       <li><b><i class="icon-home"></i> <%= link_to 'Programação', course_schedule_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%= link_to 'Programação da turma', course_users_path(@course) %></b></li>
-      <li><b><i class="icon-home"></i> <%#= link_to 'Students class', course_users_path(@course) %></b></li>
+      <li><b><i class="icon-home"></i> <%= link_to 'Gerenciar notícias', notices_path %></b></li>
     <% elsif current_user.role == 'student' %>
       <li><b><i class="icon-home"></i> <%= link_to 'Programação', course_schedule_path(@course) %></b></li>
       <li><b><i class="icon-home"></i> <%= link_to 'Notícias', course_notices_path(@course) %></b></li>

@@ -15,7 +15,7 @@
 
   <p><b>Professor</b></p>
   <% @course.users.each do |user| %>
-    <% if user.has_role? :teacher %>
+    <% if user.role == 'teacher' %>
       <%= user.email %>
       <%= link_to 'remove', remove_path(user), method: :delete %><br>
     <% end %>
@@ -24,7 +24,7 @@
   <br><br>
   <p><b>Alunos</b></p>
   <% @course.users.each do |user| %>
-    <% if user.has_role? :student %>
+    <% if user.role == 'student' %>
       <%= user.email %>
       <%= link_to 'remove', remove_path(user), method: :delete %><br>
     <% end %>

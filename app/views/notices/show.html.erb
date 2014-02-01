@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header' %>
 
-<p>
-  <b>Title:</b>
-  <%= @notice.title %>
-</p>
+<div class="span3 sidebar-nav">
+  <%= render 'shared/menu_manage' %>
+</div>
 
-<p>
-  <b>Content:</b>
-  <%= @notice.content %>
-</p>
+<div class="span8">
+  <p id="notice"><%= notice %></p>
 
+  <p>
+    <b>Title:</b>
+    <%= @notice.title %>
+  </p>
 
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
-<%= link_to 'Back', notices_path %>
+  <p>
+    <b>Content:</b>
+    <%= @notice.content %>
+  </p>
+
+  <%= link_to 'editar', edit_notice_path(@notice) %> |
+  <%= link_to 'voltar', notices_path %>
+</div>

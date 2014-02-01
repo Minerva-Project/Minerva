@@ -1,5 +1,10 @@
-<h1>New notice</h1>
+<%= render 'layouts/header' %>
 
-<%= render 'form' %>
+<div class="span3 sidebar-nav">
+  <%= render 'shared/menu_manage' %>
+</div>
 
-<%= link_to 'Back', notices_path %>
+<div class="span8">
+  <%= render 'form' %>
+  <%= link_to 'Back', notices_path %>
+</div>

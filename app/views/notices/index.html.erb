@@ -1,25 +1,18 @@
-<h1>Listing notices</h1>
+<%= render 'layouts/header' %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="span3 sidebar-nav">
+  <%= render 'shared/menu_manage' %>
+</div>
 
-<% @notices.each do |notice| %>
-  <tr>
-    <td><%= notice.title %></td>
-    <td><%= notice.content %></td>
-    <td><%= link_to 'Show', notice %></td>
-    <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-    <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Notice', new_notice_path %>
+<div class="span8">
+  <%= link_to 'Criar nova notícia', new_notice_path %>
+  <table class="table">
+    <% @notices.each do |notice| %>
+      <tr>
+        <td><%= link_to notice.title, notice %></td>
+        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

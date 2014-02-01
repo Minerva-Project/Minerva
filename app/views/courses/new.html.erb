@@ -1,0 +1,17 @@
+<%= render 'shared/header' %>  
+
+<div class="container">
+
+  <div class="row col-md-3 sidebar-offcanvas">
+    <div class="menu">
+      <%= render 'shared/admin_menu' %>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-8">
+    <%= link_to "criar um curso", new_course_path %>
+    <%= render 'form' %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<%= render 'shared/header' %>  
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render 'shared/admin_menu' %>
+    </div>
+    
+    <div class="row">
+      <%= link_to "criar um curso", new_course_path %>
+    </div>
+    
+    <div class="col-md-8">
+      <% @courses.each do |course| %>
+        <%= course.title %>
+        <%= link_to 'excluir curso', course_path(course), method: :delete %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>

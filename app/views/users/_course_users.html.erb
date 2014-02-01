@@ -17,12 +17,12 @@
       </tr>
 
     <% @course.users.each do |user| %>
-
       <tr>
         <td><b><%= link_to user.first_name + " #{user.last_name}", user %></b></td>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
         <td><%= user.state %></td>
+        <td><%= link_to "remover do curso", remove_path(user.id, @course.id), method: :delete %></td>
       </tr>
     <% end %>
     </table>

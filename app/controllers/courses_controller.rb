@@ -66,11 +66,11 @@ before_filter :map
   def remove
     user = User.find(params[:user_id])
     course = Course.find(params[:id])
+    course.users.destroy(user)
+    course.save!
     
-    if  course.users.destroy(user)
-      create_log(course, "remove", user)
-      redirect_to course, notice: "Removido"
-    end
+    create_log(course, "remove", user)
+    redirect_to course, notice: "Removido"
   end
   
   def create_log(course, action, user=nil)

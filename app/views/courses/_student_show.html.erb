@@ -1,7 +1,10 @@
-<div class="span2 sidebar-nav">
+<div class="span3 sidebar-nav">
   <%= render 'shared/menu_manage' %>
 </div>
 <div class="span7">
+
+<%= render 'shared/menu_class' %>
+
   <table class="table">
     <tr class="info">
       <td><b><i class="icon-th-list"></i> Course</b> <%= @course.title %> </td>
@@ -34,17 +37,4 @@
     <%= link_to 'Edit', edit_course_path(@course), class: 'btn btn-small btn-success' %>
     <%= link_to 'Back', :back, class: 'btn btn-small btn-info' %>
 
-</div>
-
-<div class="span3 sidebar-nav">
-<table class="table">
-  <tr class="warning">
-    <td><b>Configurações</b></td>
-  </tr>
-  <tr>
-    <td>
-      <%= render 'shared/menu_class' %>
-    </td>
-  </tr>
-</table>
 </div>

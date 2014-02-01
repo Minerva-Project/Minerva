@@ -5,7 +5,7 @@
     }
 </style>
 
-<div class="well"><br>
+<div><br>
   <ul id="cat">
     <% if current_user.role == 'admin' %>
       <li><b><i class="icon-home"></i> <%= link_to 'Alunos do curso', course_users_path(@course) %></b></li>

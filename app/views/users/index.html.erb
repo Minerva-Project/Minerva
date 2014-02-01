@@ -13,8 +13,8 @@
         <div class="users">
           <% @users.each do |user| %>
             <%= link_to user.first_name, user %> |
-            <%= link_to 'excluir', course_path(user), method: :delete %> |
-            <%= link_to 'editar', edit_course_path(user)%>
+            <%= link_to 'excluir', user_path(user), method: :delete %> |
+            <%= link_to 'editar', edit_user_path(user)%>
             <br>
           <% end %>
         </div>

@@ -1,2 +1,14 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= render 'shared/header' %>  
+
+<div class="container">
+
+  <div class="row col-md-3 sidebar-offcanvas">
+    <div class="menu">
+      <%= render 'shared/admin_menu' %>
+    </div>
+  </div>
+  
+  <div class="col-md-8">
+    <%= render 'form' %>
+  </div>
+</div>

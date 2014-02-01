@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe CoursesController do
+  
+  before :each do
+    admin = FactoryGirl.create(:admin)
+    sign_in :user, admin
+  end
 
   describe "GET 'index'" do
     it "return all courses created" do

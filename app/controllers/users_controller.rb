@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.destroy
     
-    create_log(current_user.email, "destoy_user", user.email)
+    create_log(current_user.email, "destroy_user", user.email)
     redirect_to users_path
   end
 

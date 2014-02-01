@@ -1,9 +1,12 @@
 Minerva::Application.routes.draw do
   
+  
+
   root :to=>"static_pages#admin"
   
   resources :users
   resources :courses
+  resources :logs
   
   devise_for :user
   devise_scope :user do

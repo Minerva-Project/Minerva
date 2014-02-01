@@ -38,4 +38,13 @@ describe CoursesController do
       Course.last.title.should == "Math"
     end
   end
+  
+  describe "GET show" do
+    it "show one course" do
+      course = Course.create(:title=>"Biology")
+      get :show, :id=>course.id
+      
+      assigns(:course).title.should == course.title
+    end
+  end
 end

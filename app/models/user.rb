@@ -5,6 +5,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   field :role, :type => String, :default => ""
+  field :first_name, :type => String, :default => ""
   
   attr_accessible :email, :password, :password_confirmation, :remember_me
 

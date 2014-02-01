@@ -12,7 +12,7 @@
       </div>
         <div class="courses">
           <% @courses.each do |course| %>
-            <%= course.title %>
+            <%= link_to course.title, course %>
             <%= link_to 'excluir', course_path(course), method: :delete %>
             <%= link_to 'editar', edit_course_path(course)%>
             <br>

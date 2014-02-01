@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Minerva::Application.config.secret_token = 'c2d302d3b2f73bc34b4b819198653488a5aedad0eba4bb3bc360f3b79f89e6f8204a92d94a9afff2ca9bfbf0f5c5432f24848db61671977bb834563eec43543b'
+Minerva::Application.config.secret_token = '83bf8d9ce38bb199a532d827fc7af753549dcdf94fbb4720114ac6eea1d8d2b83e2e9615a423361d5d6fc36d487e75ecdcaed4e67cd4bb7a32125e3931f87210'

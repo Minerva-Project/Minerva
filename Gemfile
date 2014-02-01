@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
 gem "mongoid", "~> 3.0.0"
 gem 'rails-backbone'
 gem 'devise'
@@ -13,7 +12,6 @@ group :development, :test do
   gem 'database_cleaner', "0.9.1"
   gem 'spork', '0.9.2'
   gem 'webrat'
-  gem 'jasmine'
 end
 
 group :assets do

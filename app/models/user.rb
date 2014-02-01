@@ -7,7 +7,7 @@ class User
   field :role, :type => String, :default => ""
   field :first_name, :type => String, :default => ""
   
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :role
 
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
@@ -22,8 +22,9 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
-  
-  
+    
   has_and_belongs_to_many :courses
+  
+  scope :all_students, where(:role=>"student")
   
 end

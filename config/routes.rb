@@ -1,10 +1,13 @@
 Minerva::Application.routes.draw do
-  
-  
 
   root :to=>"static_pages#admin"
   
-  resources :users
+  resources :users do 
+    collection do
+      get :students_association      
+    end
+  end
+  
   resources :courses
   resources :logs
   

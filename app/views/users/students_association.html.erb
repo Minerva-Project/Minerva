@@ -1,0 +1,20 @@
+<%= render 'shared/header' %>  
+
+<div class="container">
+
+  <div class="row col-md-3 sidebar-offcanvas">
+    <div class="menu">
+      <%= render 'shared/admin_menu' %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Alunos</h3>
+      <% @students.each do |student| %>
+        <p><%= student.first_name %></p>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

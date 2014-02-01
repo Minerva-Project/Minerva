@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(params[:user])
     user.save
-    
+
     create_log(current_user.email, "create_user", user.email)
     redirect_to users_path
   end
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     
     user.update_attributes(params[:user])
+
     redirect_to users_path
   end
   
@@ -38,6 +39,10 @@ class UsersController < ApplicationController
     
     create_log(current_user.email, "destroy_user", user.email)
     redirect_to users_path
+  end
+  
+  def students_association
+    @students = User.all_students
   end
 
 end

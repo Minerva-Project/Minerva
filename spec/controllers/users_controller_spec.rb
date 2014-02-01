@@ -57,4 +57,16 @@ describe UsersController do
       Log.all.size.should == 1
     end
   end
+  
+  describe "GET students_association" do
+    it "show all students available for association in any course" do
+      student1 = FactoryGirl.create(:student)
+      student2 = FactoryGirl.create(:student)
+      
+      get :students_association
+      
+      assigns(:students).size.should == 2
+      assigns(:students).last.email.should == student2.email
+    end
+  end
 end

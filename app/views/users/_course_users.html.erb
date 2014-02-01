@@ -13,7 +13,7 @@
         <th>Email</th>
         <th>Status</th>
         <th>Término</th>
-        <th>Excluir</th>
+        <th>Remover</th>
       </tr>
 
     <% @course.users.each do |user| %>
@@ -23,7 +23,6 @@
         <td><%= user.email %></td>
         <td><%= user.role %></td>
         <td><%= user.state %></td>
-        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Deseja excluir?' }, class: 'btn btn-small btn-danger' %></td>
       </tr>
     <% end %>
     </table>

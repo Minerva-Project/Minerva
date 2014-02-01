@@ -11,9 +11,9 @@ Minerva::Application.routes.draw do
     resources :users
     resources :notices
   end
-
+  
+  get  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'
   delete '/users/:user_id/courses/:id', to: 'courses#remove', as: 'remove'
-  match  '/users/:user_id/courses/:id', to: 'courses#add',    as: 'add'
   
   devise_for :users
   resources :users, :controller => "users" do

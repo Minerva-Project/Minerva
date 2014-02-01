@@ -28,4 +28,14 @@ describe CoursesController do
       Course.all.size.should == 0
     end
   end
+  
+  describe "PUT update" do
+    it "update a course" do
+      course = Course.create(:title=>"Biology")
+      course_params = {:title=>"Math"}
+      post :update, :id=>course.id, :course=>course_params
+      
+      Course.last.title.should == "Math"
+    end
+  end
 end

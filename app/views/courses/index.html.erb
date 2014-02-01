@@ -6,16 +6,18 @@
       <%= render 'shared/admin_menu' %>
     </div>
     
-    <div class="row">
-      <%= link_to "criar um curso", new_course_path %>
-    </div>
-    
-    <div class="col-md-8">
-      <% @courses.each do |course| %>
-        <%= course.title %>
-        <%= link_to 'excluir curso', course_path(course), method: :delete %>
-        <br>
-      <% end %>
+    <div class="row col-md-8">
+      <div class="menu">
+        <%= link_to "criar um curso", new_course_path %>
+      </div>
+        <div class="courses">
+          <% @courses.each do |course| %>
+            <%= course.title %>
+            <%= link_to 'excluir', course_path(course), method: :delete %>
+            <%= link_to 'editar', edit_course_path(course)%>
+            <br>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>

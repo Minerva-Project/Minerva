@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     @course = Course.new
   end
   
+  def edit
+    @course = Course.find(params[:id])
+  end
+  
   def create
     course = Course.create(params[:course])
     redirect_to courses_path
@@ -16,6 +20,12 @@ class CoursesController < ApplicationController
   def destroy
     course = Course.find(params[:id])
     course.destroy
+    redirect_to courses_path
+  end
+  
+  def update
+    course = Course.find(params[:id])
+    course.update_attributes(params[:course])
     redirect_to courses_path
   end
 end

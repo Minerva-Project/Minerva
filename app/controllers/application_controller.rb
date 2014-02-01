@@ -1,5 +1,4 @@
 require 'pp'
-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
@@ -14,6 +13,10 @@ class ApplicationController < ActionController::Base
       body = "#{action_by} criou o usuario #{target}"
     when "destroy_user"
       body = "#{action_by} excluiu o usuario #{target}"
+    when "create_course"
+      body = "#{action_by} criou o curso #{target}"
+    when "destoy_course"
+      body = "#{action_by} excluiu o curso #{target}"
     end
     
     Log.create(:body=>body)

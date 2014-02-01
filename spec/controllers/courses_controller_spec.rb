@@ -23,6 +23,13 @@ describe CoursesController do
       post :create, :course=>course
       Course.all.size.should == 1
     end
+    
+    it "when create a new course create a log" do
+      course = {:title=>"Biology"}
+      post :create, :course=>course
+      
+      Log.all.size.should == 1
+    end
   end
   
   describe "DELETE destroy" do
@@ -31,6 +38,13 @@ describe CoursesController do
       post :destroy, :id=>course.id
       
       Course.all.size.should == 0
+    end
+    
+    it "when destroy a course create a log" do
+      course = FactoryGirl.create(:course)
+      post :destroy, :id=>course.id
+      
+      Log.all.size.should == 1
     end
   end
   

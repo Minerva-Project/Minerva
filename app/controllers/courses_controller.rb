@@ -19,12 +19,16 @@ class CoursesController < ApplicationController
   
   def create
     course = Course.create(params[:course])
+    
+    create_log(current_user.email, "create_course", course.title)
     redirect_to courses_path
   end
   
   def destroy
     course = Course.find(params[:id])
     course.destroy
+    
+    create_log(current_user.email, "destroy_course", course.title)
     redirect_to courses_path
   end
   

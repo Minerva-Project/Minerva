@@ -49,6 +49,16 @@ class CoursesController < ApplicationController
   
   def remove_student
     course = Course.find(params[:id])
-    course.students.find(params[:user_id])
+    student = User.find(params[:user_id])
+    
+    course.users.delete(student)
+    redirect_to courses_path
+  end
+  
+  def show_students
+    course = Course.find(params[:id])
+    @students = course.users.all
+    
+    render :nothing=>true
   end
 end

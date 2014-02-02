@@ -85,4 +85,19 @@ describe CoursesController do
     post :remove_student, :id=>course.id, :user_id=>student.id
     course.reload.users.all.size.should == 0
   end
+  
+    describe "GET show_students" do
+      it "show students of one course" do
+        course = Course.create(:title=>"Biology")
+        student1 = FactoryGirl.create(:student)
+        student2 = FactoryGirl.create(:student)
+        
+        course.users << student1
+        course.users << student2
+        course.save
+        
+        get :show_students, :id=>course.id
+        assigns(:students).size.should == 2
+      end
+    end
 end

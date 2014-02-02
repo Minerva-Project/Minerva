@@ -12,6 +12,7 @@ Minerva::Application.routes.draw do
     collection do
       post :include_student
       post :remove_student
+      get :show_students
     end
   end
   

@@ -2,13 +2,19 @@ Minerva::Application.routes.draw do
 
   root :to=>"static_pages#admin"
   
-  resources :users do 
+  resources :users do
     collection do
-      get :students_association      
+      get :students_association
     end
   end
   
-  resources :courses
+  resources :courses do
+    collection do
+      post :include_student
+      post :remove_student
+    end
+  end
+  
   resources :logs
   
   devise_for :user

@@ -37,4 +37,18 @@ class CoursesController < ApplicationController
     course.update_attributes(params[:course])
     redirect_to courses_path
   end
+  
+  def include_student
+    course = Course.find(params[:id])
+    
+    course.users << User.find(params[:user_id])
+    course.save!
+    
+    redirect_to courses_path
+  end
+  
+  def remove_student
+    course = Course.find(params[:id])
+    course.students.find(params[:user_id])
+  end
 end

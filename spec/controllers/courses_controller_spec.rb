@@ -66,4 +66,23 @@ describe CoursesController do
       assigns(:course).title.should == course.title
     end
   end
+  
+  it "include one student in a course" do    
+    course = FactoryGirl.create(:course)
+    student = FactoryGirl.create(:student)
+    
+    post :include_student, :id=>course.id, :user_id=>student.id
+    
+    course.reload.users.all.size.should == 1
+  end
+  
+  it "remove one student of course" do
+    course = FactoryGirl.create(:course)
+    student = FactoryGirl.create(:student)
+    course.users << course
+    course.save
+    
+    post :remove_student, :id=>course.id, :user_id=>student.id
+    course.reload.users.all.size.should == 0
+  end
 end
